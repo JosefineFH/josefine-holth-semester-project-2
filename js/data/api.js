@@ -1,0 +1,1 @@
+export const baseUrl = "https://strapi-semester-project02.herokuapp.com/api/";
