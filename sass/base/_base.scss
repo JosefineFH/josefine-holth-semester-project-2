@@ -1,0 +1,23 @@
+.logo{
+    img{
+        width: 150px;
+    }
+}
+h1{
+    font-family: $base__font;
+    font-size: 43px;
+    color: rgb(43,43,43);
+}
+body{
+    font-family: $main__font;
+    section{
+        padding: $base__padding * 2;
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    a:hover{
+        font-weight: lighter;
+        
+    }
+}
