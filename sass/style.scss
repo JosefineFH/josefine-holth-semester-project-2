@@ -2,10 +2,12 @@
 @import "./base/variables";
 @import "./base/base";
 // Components
+@import "./components/navbar"; 
+@import "./components/prodcutCard";
+@import "./components/buttons";
 // Core
 // Layout
 @import "./layout/login";
-@import "./components/navbar"; 
-@import "./components/prodcutCard"
 // Pages
+@import "./pages/adminDashboard";
 // Sections

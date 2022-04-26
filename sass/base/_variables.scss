@@ -1,6 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-$base__font: 'Playfair Display', serif; 
-$main__font: 'Montserrat', sans-serif;
-$base__padding: 20px;
+$title__font: 'Playfair Display', serif; 
+$base__font: 'Montserrat', sans-serif;
+
+
+// theme color
+$primary: #e38150;
+$secondary: #276359 ;
+$info: #f2ddcc ;
+$error: #d32752;
+
+// spacing
+$base__padding: 0.75rem ;
+$base__margin: 0.75rem ;
+
+// box-shadow
+$base__box--shadow: 1px 3px 5px rgba(212, 165, 165, 0.1) ;
+
+// font sizes
+$base__font--size: 1rem ;
+$font__size--sm: $base__font--size * 0.75 ;
+$font__size--lg: $base__font--size * 1.5 ;
+$font__size--xl: $base__font--size * 2 ;
+$font__size--xxl: $base__font--size * 3;

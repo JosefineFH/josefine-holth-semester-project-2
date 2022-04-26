@@ -1,23 +1,26 @@
+/* reset styles */
+* {
+    color: inherit;
+    // margin: 0;
+  }
+body{
+    font-family: $base__font;
+
+    section{
+        padding: $base__padding;
+    }
+}
+ul{
+    list-style: none;
+    margin: 0;
+}
 .logo{
     img{
         width: 150px;
     }
 }
 h1{
-    font-family: $base__font;
-    font-size: 43px;
-    color: rgb(43,43,43);
-}
-body{
-    font-family: $main__font;
-    section{
-        padding: $base__padding * 2;
-        max-width: 1000px;
-        margin: auto;
-    }
-
-    a:hover{
-        font-weight: lighter;
-        
-    }
+    font-family: $title__font;
+    font-size: $font__size--xxl;
+    margin: 0;
 }
