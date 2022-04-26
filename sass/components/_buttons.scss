@@ -1,0 +1,9 @@
+a.buttons{
+  background-color: $info;
+  text-decoration: none;
+  padding: 14px 25px;
+  font-weight: bold;
+  &:hover{
+    background: $primary;
+  }
+}
