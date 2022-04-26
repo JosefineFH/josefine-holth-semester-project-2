@@ -1,3 +1,5 @@
+import { getUserInfo, getToken } from "../../utils/storage.js";
+
 const dropdownMenu = document.querySelector(".fa-bars");
 const menu = document.querySelector(".dropdown__items");
 
@@ -19,19 +21,33 @@ export default function createMenu() {
 
   const menuContainer = document.querySelector(".menu-container");
 
-  let username;
+  let username = getUserInfo();
+  let token = getToken();
+  console.log(token.length)
+  console.log(username.length)
 
-  let authLink = `<a href="login.html" class="${pathname === "/login.html" || "/adminDashboard" ? "hide" : ""}">Login</a>`
-  let logout = `<a class="logout__button">Logout</a>`
+  let authLink;
 
-  menuContainer.innerHTML += `<li>
-      <a href="/" class="${pathname === "/" || pathname === "/index.html" ? "active" : ""}">Home</a>
+  if(username.length &&  token.length === 0){
+    authLink = `<a href="/">logout</a>`;
+  } else {
+    authLink = `<a href="/login.html">login</a>`;
+  }
+  console.log(authLink)
+
+  // let logout = `<a class="logout__button">Logout</a>`
+
+  menuContainer.innerHTML += `
+    <li>
+      <a href="/">Home</a>
     </li>
     <li>
-      <a href="/productPage.html" class="${pathname === "/login.html" ? "hide" : ""}">Shope</a>
+      <a href="/productPage.html" >Shope</a>
     </li>
     <li>${authLink}</li>
     
     `;
 
 }
+
+https://github.com/NoroffFEU/frontend-for-strapi-api/blob/step-9-protected-routes/js/components/common/createMenu.js

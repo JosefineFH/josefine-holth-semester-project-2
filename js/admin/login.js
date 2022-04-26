@@ -10,7 +10,7 @@ const user = getUserInfo();
 const token = getToken();
 
 if(user.length && token.length){
-  document.location.href = "/adminDashboard.html";
+  document.location.href = "/admin/adminDashboard.html";
 }
 
 form.addEventListener("submit", login);
@@ -56,7 +56,7 @@ async function loginUser(email, password) {
       saveToken(jwt);
       saveUserInfo(username);
 
-      location.href = "/adminDashboard.html"
+      location.href = "/admin/adminDashboard.html"
     }
     if(json.error){
         message.innerHTML += `<p>your username and/or password is wrong</p>`

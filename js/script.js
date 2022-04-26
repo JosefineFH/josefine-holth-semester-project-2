@@ -1,9 +1,7 @@
-
-import { baseUrl } from "./data/api.js";
-import createProductList from "./admin/adminDashboard.js";
-import getData from "./data/apiCall.js";
 import createMenu from "./components/common/createMenu.js";
+import createHtml from "./components/createHTML.js";
+import getData from "./data/apiCall.js";
 
 createMenu();
 
-getData();
+createHtml();
