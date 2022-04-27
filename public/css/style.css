@@ -26,6 +26,7 @@ h1 {
   font-family: "Playfair Display", serif;
   font-size: 3rem;
   margin: 0;
+  text-align: center;
 }
 
 .fa-solid, .fas {
@@ -145,6 +146,25 @@ a.buttons:hover {
 
 .product__list li {
   padding: 0.75rem 0;
+}
+
+form {
+  max-width: 600px;
+  margin: 0.75rem auto;
+}
+
+form label {
+  width: 110px;
+}
+
+form .btn {
+  background-color: #DE4E45;
+  color: white;
+}
+
+form .form-check-input:checked {
+  background-color: #DE4E45;
+  border-color: #DE4E45;
 }
 
 #category .chosenCategory {
