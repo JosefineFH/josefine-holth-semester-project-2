@@ -10,6 +10,7 @@ const user = getUserInfo();
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
+const { pathname } = document.location;
 
 
 const message = document.querySelector(".message")
@@ -34,7 +35,7 @@ export default function getEditData(products) {
 
   productList.forEach(product => {
     if (product.id == id) {
-      console.log(product.attributes.cover_image)
+      
       let featuredItem = product.attributes.featured;
       let freeItem = product.attributes.free
 
@@ -68,10 +69,10 @@ export default function getEditData(products) {
       }
     }
   });
+  form.addEventListener("submit", submitChanges);
 }
 
 
-form.addEventListener("submit", submitChanges);
 
 function submitChanges(event) {
   event.preventDefault();
@@ -121,7 +122,7 @@ async function updateProduct(data, id, cover) {
     const response = await fetch(updateUrl, options);
     const json = await response.json();
 
-    // console.log(json)
+    console.log(json)
 
   } catch (error) {
     // console.log(error)
