@@ -32,9 +32,10 @@ const selectedCategories = document.querySelector("#category")
 
 export default function getEditData(products) {
   const productList = products.data;
-
+  
   productList.forEach(product => {
     if (product.id == id) {
+      console.log(product.attributes.cover_image)
       
       let featuredItem = product.attributes.featured;
       let freeItem = product.attributes.free
@@ -89,6 +90,7 @@ function submitChanges(event) {
   // const productImages
   const altText = altTextValue.value.trim();
   const category = selectedCategories.value.trim();
+  console.log(category)
 
   console.log(cover_image)
 
@@ -98,13 +100,14 @@ function submitChanges(event) {
   updateProduct(data, id, cover_image)
 }
 
-async function updateProduct(data, id, cover) {
-
+async function updateProduct(data, id, cover_image) {
+  
   const updateUrl = baseUrl + "products/" + id + "?populate=*"
 
   const formData = new FormData();
 
-  formData.append("files.cover", cover[0]);
+
+  formData.append("files.cover_image", cover_image[0]);
   formData.append("data", data);
 
   const options = {
@@ -118,14 +121,14 @@ async function updateProduct(data, id, cover) {
   };
   console.log(options)
 
-  try {
-    const response = await fetch(updateUrl, options);
-    const json = await response.json();
+  // try {
+  //   const response = await fetch(updateUrl, options);
+  //   const json = await response.json();
 
-    console.log(json)
+  //   console.log(json)
 
-  } catch (error) {
-    // console.log(error)
-  }
+  // } catch (error) {
+  //   // console.log(error)
+  // }
 
 }
