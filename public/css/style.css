@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 body section {
@@ -145,4 +145,8 @@ a.buttons:hover {
 
 .product__list li {
   padding: 0.75rem 0;
+}
+
+#category .chosenCategory {
+  background-color: orange;
 }

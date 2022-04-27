@@ -15,39 +15,39 @@ menu.addEventListener("click", () => {
 })
 
 export default function createMenu() {
-  console.log("creating menu")
-
   const { pathname } = document.location;
 
   const menuContainer = document.querySelector(".menu-container");
 
-  let username = getUserInfo();
-  let token = getToken();
-  console.log(token.length)
-  console.log(username.length)
-
-  let authLink;
-
-  if(username.length &&  token.length === 0){
-    authLink = `<a href="/">logout</a>`;
-  } else {
-    authLink = `<a href="/login.html">login</a>`;
-  }
-  console.log(authLink)
-
-  // let logout = `<a class="logout__button">Logout</a>`
-
   menuContainer.innerHTML += `
+  <li class="dashboard__button" style="display: none">
+  <a href="/admin/adminDashboard.html">Dashboard</a>
+  </li>
     <li>
       <a href="/">Home</a>
     </li>
     <li>
       <a href="/productPage.html" >Shope</a>
     </li>
-    <li>${authLink}</li>
-    
+    <li class="login__button"><a href="/login.html">login</a></li>
     `;
 
-}
+    const loginButton = document.querySelector(".login__button");
+    const backToDashboard = document.querySelector(".dashboard__button")
 
-https://github.com/NoroffFEU/frontend-for-strapi-api/blob/step-9-protected-routes/js/components/common/createMenu.js
+    switch (pathname) {
+      case "/login.html":
+        loginButton.style.display = "none";
+        break;
+    case "/admin/adminDashboard.html":
+      loginButton.style.display = "none";
+    break;
+    case "/admin/editProduct.html":
+      loginButton.style.display = "none";
+      backToDashboard.style.display = "block"
+    break;
+      default:
+        break;
+    }
+
+}

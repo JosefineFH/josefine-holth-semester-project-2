@@ -7,13 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/public/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-  <title>Document</title>
+  <title>Admin | Edit Product</title>
 </head>
 <body>
   <nav>
-    <div class="logo">Logo</div>
+    <div class="logo"><img src="/assets/images/logo/light - 03.png" alt="" /></div>
     <div class="menu">
       <div class="dropdown__button"><i class="fa-solid fa-bars"></i></div>
       <div class="dropdown__items" style="display: none;">
@@ -27,12 +28,76 @@
       <div>
         <h1>edit product</h1>
       </div>
+      <div>
+        <div class="message"></div>
+        <form>
+          <div class="mb-3"> 
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" />
+          </div>
+
+          <div class="mb-3">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" id="" cols="30" rows="10"></textarea>
+            <!-- <input type="text" name="description" id="description" /> -->
+          </div>
+          
+          <div class="mb-3">
+            <label for="featured">featured</label>
+            <input type="checkbox" name="featured" id="featured" />
+            <label for="free__product">Free</label>
+            <input type="checkbox" name="free__product" id="free__product" />
+          </div>
+
+          <div class="mb-3"> 
+            <label for="price">Price</label>
+            <input type="number" name="price" id="price" />
+          </div>
+
+          <div class="input__container">
+            <label for="cover">Cover Image </label>
+            <input
+              type="file"
+              id="cover"
+              name="cover"
+              accept="image/png, image/jpeg"
+            />
+          </div>
+
+          <div class="mb-3 input__container">
+            <label for="images">Images</label>
+            <input
+              type="file"
+              id="product__images"
+              name="images"
+              accept="image/png, image/jpeg"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="alt_text">Alt text</label>
+            <input type="text" name="alt_text" id="alt_text" />
+          </div>
+
+          <div class="mb-3">
+            <label for="category">Category </label>
+            <select name="category" id="category"></select>
+
+            <div class="mb-3 selected__categories">
+              <ul class="selected__categories--items"></ul>
+            </div>
+          </div>
+
+          <input id="id" type="hidden" />
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+        </form>
+      </div>
     </section>
 
   </main>
 </body>
+<script src="/js/admin/adminScript.js" type="module"></script>
 
-<script src="/js/script.js" type="module"></script>
-<script src="/js/components/navbar.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </html>

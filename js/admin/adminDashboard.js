@@ -1,16 +1,10 @@
 import getData from "../data/apiCall.js";
 import { getToken, getUserInfo } from "../utils/storage.js";
 
-const user = getUserInfo();
-const token = getToken();
-
-if(!user.length || !token.length){
-  document.location.href = "/login.html";
-}
-
-const container = document.querySelector(".product__list")
 
 export default function createProductList(products){
+
+  const container = document.querySelector(".product__list")
   const productList = products.data;
   
   productList.forEach(product => {
@@ -21,7 +15,7 @@ export default function createProductList(products){
     <li>
       <h2>${title}</h2>
 
-      <a class="buttons" href="/editProduct.html?id=${id}">Edit</a>
+      <a class="buttons" href="/admin/editProduct.html?id=${id}">Edit</a>
     </li>
     `
   });

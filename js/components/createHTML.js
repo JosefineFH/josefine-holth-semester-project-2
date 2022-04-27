@@ -6,8 +6,6 @@ export default async function createHtml(){
     const json = await response.json();
     const products = json.data
 
-    console.log(json)
-
     for (let i = 0; i < products.length; i++) {
       let title = products[i].attributes.title;
       let id = products[i].id
