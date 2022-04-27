@@ -3,6 +3,10 @@ import { getToken, getUserInfo } from "../utils/storage.js";
 import createProductList from "./adminDashboard.js";
 import createMenu from "../components/common/createMenu.js";
 import getData from "../data/apiCall.js";
+// import { getFormValue } from "./addProduct.js";
+
+// getFormValue
+
 const user = getUserInfo();
 const token = getToken();
 
