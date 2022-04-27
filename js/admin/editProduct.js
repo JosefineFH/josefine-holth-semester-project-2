@@ -7,13 +7,10 @@ getCategories();
 
 const token = getToken();
 const user = getUserInfo();
-if(user.length === 0 && token.length === 0){
-  document.location.href = "/login.html";
-}
-
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
+const { pathname } = document.location;
 
 
 const message = document.querySelector(".message")
@@ -26,28 +23,36 @@ const priceValue = document.querySelector("#price");
 
 const coverInput = document.querySelector("#cover");
 const productImageInput = document.querySelector("#product__images")
+const selectedCategories = document.querySelector("#category")
 
 const altTextValue = document.querySelector("#alt_text")
 const idInput = document.querySelector("#id");
-const selectedCategories = document.querySelector("#category")
-const productHeading = document.querySelector(".product__name")
+const loader = document.querySelector(".loader")
 
 export default function getEditData(products) {
   const productList = products.data;
+
+ 
   
   productList.forEach(product => {
     if (product.id == id) {      
-      productHeading.innerHTML = `${product.attributes.title}`;
-
       let featuredItem = product.attributes.featured;
       let freeItem = product.attributes.free
+
+ 
 
       titleInput.value = product.attributes.title;
       descriptionInput.value = product.attributes.description;
       priceValue.value = product.attributes.price;
       altTextValue.value = product.attributes.image_alt_text;
       idInput.value = product.id;
-
+      
+      let category = product.attributes.category.data
+      if(category == null){
+        message.innerHTML = "add category"
+      } else {
+        selectedCategories.value = product.attributes.category.data.id
+      }
 
       for (let i = 0; i < selectedCategories.options.length; i++) {
         let optionsId = selectedCategories.options[i].value;
@@ -90,20 +95,20 @@ function submitChanges(event) {
   const productImages = productImageInput.files
   const altText = altTextValue.value.trim();
   const category = selectedCategories.value.trim();
-  console.log(category)
-console.log(productImages)
-  console.log(cover_image)
 
   const data = JSON.stringify({ id, title, description, featured, free, price, altText, category })
-
 
   updateProduct(data, id, cover_image, productImages)
 }
 
 async function updateProduct(data, id, cover_image, productImages) {
+  loader.innerHTML = "loading";
+  console.log(loader)
   
   const updateUrl = baseUrl + "products/" + id + "?populate=*"
+
   const formData = new FormData();
+
 
   formData.append("files.cover_image", cover_image[0]);
   formData.append("files.images", productImages[0])
@@ -118,17 +123,18 @@ async function updateProduct(data, id, cover_image, productImages) {
       Authorization: `Bearer ${token}`,
     },
   };
-  console.log(options)
 
   try {
     const response = await fetch(updateUrl, options);
     const json = await response.json();
-
     console.log(json)
-    window.location.href = "/login.html";
+    window.location.href = "/admin/adminDashboard.html";
+    if(json.error){
+      message.innerHTML = `<p>There is an error. Pleas contact us to fix the problem</p>`
+    }
 
   } catch (error) {
-    console.log(error)
+    message.innerHTML = `<p>There is an error. Pleas contact us to fix the problem</p>`
   }
 
 }

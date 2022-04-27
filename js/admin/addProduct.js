@@ -20,6 +20,7 @@ const coverInput = document.querySelector("#cover");
 const productImageInput = document.querySelector("#product__images");
 const altTextValue = document.querySelector("#alt_text");
 const selectedCategories = document.querySelector("#category");
+const loader = document.querySelector(".loader")
 
 export function getFormValue(event) {
   event.preventDefault();
@@ -70,10 +71,11 @@ async function addProduct(data, cover_image, productImages){
     const json = await response.json();
 
     console.log(json)
-
+    
     if(json.error){
       console.log("error")
     }
+    loader.innerHTML = "Loading"
 
   } catch (error) {
     console.log(error)
