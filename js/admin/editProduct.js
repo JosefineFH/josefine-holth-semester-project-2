@@ -7,10 +7,13 @@ getCategories();
 
 const token = getToken();
 const user = getUserInfo();
+if(user.length === 0 && token.length === 0){
+  document.location.href = "/login.html";
+}
+
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
-const { pathname } = document.location;
 
 
 const message = document.querySelector(".message")
@@ -22,21 +25,20 @@ const freeItemValue = document.querySelector("#free__product")
 const priceValue = document.querySelector("#price");
 
 const coverInput = document.querySelector("#cover");
-console.log(coverInput)
-
-// const productImageInput = document.querySelector("#product__images")
+const productImageInput = document.querySelector("#product__images")
 
 const altTextValue = document.querySelector("#alt_text")
 const idInput = document.querySelector("#id");
 const selectedCategories = document.querySelector("#category")
+const productHeading = document.querySelector(".product__name")
 
 export default function getEditData(products) {
   const productList = products.data;
   
   productList.forEach(product => {
-    if (product.id == id) {
-      console.log(product.attributes.cover_image)
-      
+    if (product.id == id) {      
+      productHeading.innerHTML = `${product.attributes.title}`;
+
       let featuredItem = product.attributes.featured;
       let freeItem = product.attributes.free
 
@@ -73,8 +75,6 @@ export default function getEditData(products) {
   form.addEventListener("submit", submitChanges);
 }
 
-
-
 function submitChanges(event) {
   event.preventDefault();
 
@@ -87,27 +87,26 @@ function submitChanges(event) {
   const free = freeItemValue.checked;
   const price = priceValue.value.trim();
   const cover_image = coverInput.files;
-  // const productImages
+  const productImages = productImageInput.files
   const altText = altTextValue.value.trim();
   const category = selectedCategories.value.trim();
   console.log(category)
-
+console.log(productImages)
   console.log(cover_image)
 
   const data = JSON.stringify({ id, title, description, featured, free, price, altText, category })
 
 
-  updateProduct(data, id, cover_image)
+  updateProduct(data, id, cover_image, productImages)
 }
 
-async function updateProduct(data, id, cover_image) {
+async function updateProduct(data, id, cover_image, productImages) {
   
   const updateUrl = baseUrl + "products/" + id + "?populate=*"
-
   const formData = new FormData();
 
-
   formData.append("files.cover_image", cover_image[0]);
+  formData.append("files.images", productImages[0])
   formData.append("data", data);
 
   const options = {
@@ -121,14 +120,15 @@ async function updateProduct(data, id, cover_image) {
   };
   console.log(options)
 
-  // try {
-  //   const response = await fetch(updateUrl, options);
-  //   const json = await response.json();
+  try {
+    const response = await fetch(updateUrl, options);
+    const json = await response.json();
 
-  //   console.log(json)
+    console.log(json)
+    window.location.href = "/login.html";
 
-  // } catch (error) {
-  //   // console.log(error)
-  // }
+  } catch (error) {
+    console.log(error)
+  }
 
 }
