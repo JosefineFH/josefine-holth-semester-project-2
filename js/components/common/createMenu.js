@@ -46,6 +46,10 @@ export default function createMenu() {
       loginButton.style.display = "none";
       backToDashboard.style.display = "block"
     break;
+    case "/admin/addProduct.html":
+      loginButton.style.display = "none";
+      backToDashboard.style.display = "block"
+    break;
       default:
         break;
     }
