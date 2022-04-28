@@ -4,6 +4,7 @@ import getData from "../data/apiCall.js";
 import { getToken, getUserInfo } from "../utils/storage.js";
 
 getCategories();
+console.log("running editing")
 
 const token = getToken();
 const user = getUserInfo();
@@ -32,10 +33,9 @@ const loader = document.querySelector(".loader")
 export default function getEditData(products) {
   const productList = products.data;
 
- 
-  
   productList.forEach(product => {
     if (product.id == id) {      
+      console.log(product)
       let featuredItem = product.attributes.featured;
       let freeItem = product.attributes.free
 
@@ -74,6 +74,15 @@ export default function getEditData(products) {
       
       if (freeItem === true) {
         freeItemValue.checked = true
+      }
+
+      let imageDoesNotExist = product.attributes.cover_image.data
+      const coverImageContainer = document.querySelector(".cover__image")
+
+      if(imageDoesNotExist === null){
+        message.innerHTML = `<p>There is noe cover image here of the product, please add one.</p>`
+      } else {
+        coverImageContainer.style.display = "none"
       }
     }
   });
@@ -128,7 +137,7 @@ async function updateProduct(data, id, cover_image, productImages) {
     const response = await fetch(updateUrl, options);
     const json = await response.json();
     console.log(json)
-    window.location.href = "/admin/adminDashboard.html";
+    // window.location.href = "/admin/adminDashboard.html";
     if(json.error){
       message.innerHTML = `<p>There is an error. Pleas contact us to fix the problem</p>`
     }

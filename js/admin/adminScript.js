@@ -5,7 +5,7 @@ import createMenu from "../components/common/createMenu.js";
 import getData from "../data/apiCall.js";
 // import { getFormValue } from "./addProduct.js";
 
-// getFormValue
+// getFormValue()
 
 const user = getUserInfo();
 const token = getToken();
