@@ -7,23 +7,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/public/css/style.css">
 
   <title>Document</title>
 </head>
 <body>
   <nav>
-    <div class="logo">Logo</div>
+    <div class="logo">
+      <a href="/">
+        <img src="/assets/images/logo/light - 03.png" alt="" />
+      </a>
+    </div>
     <div class="menu">
       <div class="dropdown__button"><i class="fa-solid fa-bars"></i></div>
-      <div class="dropdown__items" style="display: none;">
-        <ul>
-          <li><a href="/productPage.html">Shop</a></li>
-        </ul>
+      <div class="dropdown__items" style="display: none">
+        <ul class="menu-container"></ul>
       </div>
     </div>
   </nav>
   <h1>Products Page</h1>
+
+  <form>
+    <label for="search" class="search">Search </label>
+    <input type="text" id="search" name="search" />
+  </form>
 
   <section class="product__list"></section>
 </body>
