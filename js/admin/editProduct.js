@@ -1,10 +1,8 @@
-import getCategories from "../components/common/createCategorys.js";
+import getCategories from "../components/common/createCategory.js";
 import { baseUrl } from "../data/api.js";
 import getData from "../data/apiCall.js";
 import { getToken, getUserInfo } from "../utils/storage.js";
 
-getCategories();
-console.log("running editing")
 
 const token = getToken();
 const user = getUserInfo();
@@ -12,6 +10,7 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 const { pathname } = document.location;
+const productName = document.querySelector(".product__name")
 
 
 const message = document.querySelector(".message")
@@ -31,11 +30,14 @@ const idInput = document.querySelector("#id");
 const loader = document.querySelector(".loader")
 
 export default function getEditData(products) {
+  getCategories();
+  
   const productList = products.data;
 
   productList.forEach(product => {
     if (product.id == id) {      
       console.log(product)
+      productName.innerHTML = product.attributes.title
       let featuredItem = product.attributes.featured;
       let freeItem = product.attributes.free
 
