@@ -25,8 +25,6 @@ const loader = document.querySelector(".loader")
 export function getFormValue(event) {
   event.preventDefault();
 
-  console.log("add product");
-
   const title = titleInput.value.trim();
   const description = descriptionInput.value.trim();
   const featured = featuredItemValue.checked;
@@ -62,9 +60,6 @@ async function addProduct(data, cover_image, productImages){
       Authorization: `Bearer ${token}`,
     },
   };
-
-  console.log(options)
-  console.log(data)
 
   try {
     const response = await fetch(updateUrl, options);
