@@ -2,7 +2,7 @@ https://noroff-feu.netlify.app/content/semester-project-2/pzpzna
 
 # Semester Project 2
 <!-- This is a school assignment for the javascript 2 lectures. -->
-This is a semester project for my second year. 
+This is a semester project for my second year of studying frontend development. 
 The assignment is to create a e-commerce website that has a customer section and a admin section. It has to be responsive and it will be populated by Strapi API that I am hosting on Heroku. 
 
 ## Table of Content
