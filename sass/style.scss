@@ -1,10 +1,11 @@
-// Base
-@import "./base/variables";
-
+// Variables & functions
 @import "./base/function";
+@import "./base/variables";
 
 // base & layout
 @import "./base/base";
+
+@import "./layout/grid";
 
 // colors
 @import "./base/colors";
@@ -12,7 +13,7 @@
 // Components (buttons, card, navbar)
 @import "./components/card";
 @import "./components/buttons";
-@import "./components/navbar";
+@import "./components/error";
 
 // utilities (margin, padding, opacity)
 @import "./base/utilities";
@@ -21,15 +22,20 @@
 // @import "./base/utilities";
 
 
-// @import "./components/navbar"; 
+@import "./components/navbar"; 
 // @import "./components/prodcutCard";
 // @import "./components/buttons";
-// @import "./components/error";
 // @import "./components/loader";
 
 // Layout
-@import "./layout/login";
+// @import "./layout/login";
+// @import "./layout/homeBanner";
+// @import "./layout/specificDetailPage";
+
 // Pages
-@import "./pages/adminDashboard";
-@import "./pages/editProducts"
+// @import "./pages/adminDashboard";
+// @import "./pages/editProducts";
+// @import "./pages/shoppingCart";
+
 // Sections
+// @import "./sections/advertisingSection";

@@ -1,26 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-$title__font: 'Playfair Display', serif; 
-$base__font: 'Montserrat', sans-serif ;
 
+@font-face {
+  font-family: "Noto Serif Display Extra Condensed";
+  src: url("../../assets/fonts/Noto-Serif-Display-ExtraCondensed.ttf.woff");
+}
 
-// theme color
+$title-font: "Noto Serif Display Extra Condensed", serif;
+$base-font: "Montserrat", sans-serif;
+
+// Theme colors
 $primary: #e38150;
-$secondary: #DE4E45 ;
-$info: #f2ddcc ;
+$secondary: #de4e45;
 $error: #d32752;
+$info: #f6c31c;
 
-// spacing
-$base__padding: 0.75rem ;
-$base__margin: 0.75rem ;
+// color palets
+$colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "error": $error,
+  "info": $info,
+  "white": white,
+  "black": black,
+  "green": #2bab8d,
+  "gray": lightgray,
+);
+
+//spacing
+$base-padding: 0.75rem;
+$base-margin: 0.75rem;
+
+//borders
+$base-border-thickens: 1px;
+$base-border-radius: 20px;
 
 // box-shadow
-$base__box--shadow: 1px 3px 5px rgba(212, 165, 165, 0.1) ;
+$base-box--shadow: 2px 3px 5px rgba(212, 165, 165, 0.25);
 
 // font sizes
-$base__font--size: 1rem ;
-$font__size--sm: $base__font--size * 0.75 ;
-$font__size--lg: $base__font--size * 1.5 ;
-$font__size--xl: $base__font--size * 2 ;
-$font__size--xxl: $base__font--size * 3;
+$base-font--size: 1rem;
+$font-size--sm: $base-font--size * 0.75;
+$font-size--lg: $base-font--size * 1.5;
+$font-size--xl: $base-font--size * 2;
+$font-size--xxl: $base-font--size * 3;
+
+// /* breakpoints */
+// $breakpoint-tablet: 768px;

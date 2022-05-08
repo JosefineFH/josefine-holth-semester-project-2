@@ -1,10 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @font-face {
   font-family: "Noto Serif Display Extra Condensed";
   src: url("../../assets/fonts/Noto-Serif-Display-ExtraCondensed.ttf.woff");
 }
 
-/* reset styles */
 * {
   color: inherit;
   margin: 0;
@@ -15,6 +15,7 @@
 
 body {
   font-family: "Montserrat", sans-serif !important;
+  background-color: #FFFCF7;
 }
 
 ul {
@@ -30,6 +31,7 @@ img {
 h1 {
   margin-bottom: 0.75rem;
   font-family: "Noto Serif Display Extra Condensed", serif;
+  font-size: 3rem;
   margin: 0;
   text-align: center;
   font-weight: 100;
@@ -65,6 +67,91 @@ button {
   padding: 0.75rem;
   border: 20px;
   border-width: 1px;
+}
+
+@use "sass:math";
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.gap-0 > * {
+  padding: 0;
+}
+
+.gap-0 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.gap-1 > * {
+  padding: 10px;
+}
+
+.gap-1 {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.gap-2 > * {
+  padding: 20px;
+}
+
+.gap-2 {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.gap-3 > * {
+  padding: 30px;
+}
+
+.gap-3 {
+  margin-left: -30px;
+  margin-right: -30px;
+}
+
+.justify-flex-start {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.justify-flex-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.justify-space-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.justify-space-around {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .text-primary {
@@ -490,21 +577,33 @@ button {
   -webkit-box-shadow: 2px 3px 5px rgba(212, 165, 165, 0.25);
           box-shadow: 2px 3px 5px rgba(212, 165, 165, 0.25);
   border-radius: 5px;
-  width: 200px;
+  width: 300px;
+  margin: 0 0.75rem;
 }
 
 .card img {
   width: 100%;
 }
 
-.card .card__body {
-  padding: 0.75rem;
-}
-
-.card .card__title {
+.card .card-title {
   font-size: 1.5rem;
   padding: 0.75rem 0;
   font-weight: bold;
+  text-align: center;
+}
+
+.card .card__body {
+  font-family: 1rem;
+  padding: 0.75rem;
+}
+
+.card .card__body p {
+  padding: 0.75rem 0;
+}
+
+.card .card__body a {
+  text-decoration: underline;
+  padding-left: 0.75rem;
 }
 
 .btn {
@@ -935,6 +1034,256 @@ button {
   background-color: white;
 }
 
+.error__message {
+  padding: 2.25rem 0;
+  text-align: center;
+  font-size: 30px;
+}
+
+.error {
+  color: red;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.p-1 {
+  padding: 0.75rem;
+}
+
+.p-2 {
+  padding: 1.5rem;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.p-4 {
+  padding: 4.5rem;
+}
+
+.p-5 {
+  padding: 6rem;
+}
+
+.pl-0 {
+  padding-left: 0;
+}
+
+.pl-1 {
+  padding-left: 0.75rem;
+}
+
+.pl-2 {
+  padding-left: 1.5rem;
+}
+
+.pl-3 {
+  padding-left: 3rem;
+}
+
+.pl-4 {
+  padding-left: 4.5rem;
+}
+
+.pl-5 {
+  padding-left: 6rem;
+}
+
+.pr-0 {
+  padding-right: 0;
+}
+
+.pr-1 {
+  padding-right: 0.75rem;
+}
+
+.pr-2 {
+  padding-right: 1.5rem;
+}
+
+.pr-3 {
+  padding-right: 3rem;
+}
+
+.pr-4 {
+  padding-right: 4.5rem;
+}
+
+.pr-5 {
+  padding-right: 6rem;
+}
+
+.pt-0 {
+  padding-top: 0;
+}
+
+.pt-1 {
+  padding-top: 0.75rem;
+}
+
+.pt-2 {
+  padding-top: 1.5rem;
+}
+
+.pt-3 {
+  padding-top: 3rem;
+}
+
+.pt-4 {
+  padding-top: 4.5rem;
+}
+
+.pt-5 {
+  padding-top: 6rem;
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+
+.pb-1 {
+  padding-bottom: 0.75rem;
+}
+
+.pb-2 {
+  padding-bottom: 1.5rem;
+}
+
+.pb-3 {
+  padding-bottom: 3rem;
+}
+
+.pb-4 {
+  padding-bottom: 4.5rem;
+}
+
+.pb-5 {
+  padding-bottom: 6rem;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.m-1 {
+  margin: 0.75rem;
+}
+
+.m-2 {
+  margin: 1.5rem;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.m-4 {
+  margin: 4.5rem;
+}
+
+.m-5 {
+  margin: 6rem;
+}
+
+.ml-0 {
+  margin-left: 0;
+}
+
+.ml-1 {
+  margin-left: 0.75rem;
+}
+
+.ml-2 {
+  margin-left: 1.5rem;
+}
+
+.ml-3 {
+  margin-left: 3rem;
+}
+
+.ml-4 {
+  margin-left: 4.5rem;
+}
+
+.ml-5 {
+  margin-left: 6rem;
+}
+
+.mr-0 {
+  margin-right: 0;
+}
+
+.mr-1 {
+  margin-right: 0.75rem;
+}
+
+.mr-2 {
+  margin-right: 1.5rem;
+}
+
+.mr-3 {
+  margin-right: 3rem;
+}
+
+.mr-4 {
+  margin-right: 4.5rem;
+}
+
+.mr-5 {
+  margin-right: 6rem;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-1 {
+  margin-top: 0.75rem;
+}
+
+.mt-2 {
+  margin-top: 1.5rem;
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+
+.mt-4 {
+  margin-top: 4.5rem;
+}
+
+.mt-5 {
+  margin-top: 6rem;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-1 {
+  margin-bottom: 0.75rem;
+}
+
+.mb-2 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
+.mb-4 {
+  margin-bottom: 4.5rem;
+}
+
+.mb-5 {
+  margin-bottom: 6rem;
+}
+
 .navbar, .navbar-primary, .navbar-secondary, .navbar-error, .navbar-info, .navbar-white, .navbar-black, .navbar-green, .navbar-gray, .navbar .container, .navbar-primary .container, .navbar-secondary .container, .navbar-error .container, .navbar-info .container, .navbar-white .container, .navbar-black .container, .navbar-green .container, .navbar-gray .container {
   width: 100%;
   display: -webkit-box;
@@ -956,16 +1305,46 @@ button {
           box-shadow: 2px 3px 5px rgba(212, 165, 165, 0.25);
 }
 
-.navbar .logo, .navbar-primary .logo, .navbar-secondary .logo, .navbar-error .logo, .navbar-info .logo, .navbar-white .logo, .navbar-black .logo, .navbar-green .logo, .navbar-gray .logo {
-  width: 200px;
-}
-
 .navbar .site-title, .navbar-primary .site-title, .navbar-secondary .site-title, .navbar-error .site-title, .navbar-info .site-title, .navbar-white .site-title, .navbar-black .site-title, .navbar-green .site-title, .navbar-gray .site-title {
   font-size: 1.5rem;
 }
 
-.navbar .fas, .navbar-primary .fas, .navbar-secondary .fas, .navbar-error .fas, .navbar-info .fas, .navbar-white .fas, .navbar-black .fas, .navbar-green .fas, .navbar-gray .fas, .navbar .fa-bars, .navbar-primary .fa-bars, .navbar-secondary .fa-bars, .navbar-error .fa-bars, .navbar-info .fa-bars, .navbar-white .fa-bars, .navbar-black .fa-bars, .navbar-green .fa-bars, .navbar-gray .fa-bars {
-  font-size: 1.5rem;
+.navbar-primary {
+  background-color: #e38150;
+}
+
+.navbar-secondary {
+  background-color: #de4e45;
+}
+
+.navbar-error {
+  background-color: #d32752;
+}
+
+.navbar-info {
+  background-color: #f6c31c;
+}
+
+.navbar-white {
+  background-color: white;
+}
+
+.navbar-black {
+  background-color: black;
+}
+
+.navbar-green {
+  background-color: #2bab8d;
+}
+
+.navbar-gray {
+  background-color: lightgray;
+}
+
+@media (min-width: 768px) {
+  .fas, .fa-bars {
+    font-size: 1.5rem;
+  }
 }
 
 .navbar-primary {
@@ -1094,159 +1473,4 @@ button {
 
 .menu a.hide {
   display: none;
-}
-
-@use 'sass:math';
-.p-0 {
-  padding: 0;
-}
-
-.p-1 {
-  padding: 0.75rem;
-}
-
-.p-2 {
-  padding: 1.5rem;
-}
-
-.p-3 {
-  padding: 3rem;
-}
-
-.p-4 {
-  padding: 4.5rem;
-}
-
-.p-5 {
-  padding: 6rem;
-}
-
-.m-0 {
-  margin: 0;
-}
-
-.m-1 {
-  margin: 0.75rem;
-}
-
-.m-2 {
-  margin: 1.5rem;
-}
-
-.m-3 {
-  margin: 3rem;
-}
-
-.m-4 {
-  margin: 4.5rem;
-}
-
-.m-5 {
-  margin: 6rem;
-}
-
-.o-10 {
-  opacity: 0.1;
-}
-
-.o-20 {
-  opacity: 0.2;
-}
-
-.o-30 {
-  opacity: 0.3;
-}
-
-.o-40 {
-  opacity: 0.4;
-}
-
-.o-50 {
-  opacity: 0.5;
-}
-
-.o-60 {
-  opacity: 0.6;
-}
-
-.o-70 {
-  opacity: 0.7;
-}
-
-.o-80 {
-  opacity: 0.8;
-}
-
-.o-90 {
-  opacity: 0.9;
-}
-
-.o-100 {
-  opacity: 1;
-}
-
-.br {
-  border-radius: 20px;
-}
-
-.br-none {
-  border-radius: 0;
-}
-
-.br-xs {
-  border-radius: 5px;
-}
-
-.br-sm {
-  border-radius: 10px;
-}
-
-.br-lg {
-  border-radius: 40px;
-}
-
-.br-full {
-  border-radius: 50%;
-}
-
-.display-n {
-  display: none;
-}
-
-.display-b {
-  display: block;
-}
-
-.display-f {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.display-i {
-  display: inline;
-}
-
-.display-i-b {
-  display: inline-block;
-}
-
-.font-sm {
-  font-size: 0.75rem;
-}
-
-.font-md {
-  font-size: 1rem;
-}
-
-.font-lg {
-  font-size: 1.5rem;
-}
-
-.font-xl {
-  font-size: 2rem;
-}
-
-.font-xxl {
-  font-size: 3rem;
 }
