@@ -1,11 +1,32 @@
 // Base
 @import "./base/variables";
+
+@import "./base/function";
+
+// base & layout
 @import "./base/base";
-// Components
-@import "./components/navbar"; 
-@import "./components/prodcutCard";
+
+// colors
+@import "./base/colors";
+
+// Components (buttons, card, navbar)
+@import "./components/card";
 @import "./components/buttons";
-// Core
+@import "./components/navbar";
+
+// utilities (margin, padding, opacity)
+@import "./base/utilities";
+
+
+// @import "./base/utilities";
+
+
+// @import "./components/navbar"; 
+// @import "./components/prodcutCard";
+// @import "./components/buttons";
+// @import "./components/error";
+// @import "./components/loader";
+
 // Layout
 @import "./layout/login";
 // Pages

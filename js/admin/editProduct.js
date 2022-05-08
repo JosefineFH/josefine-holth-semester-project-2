@@ -1,4 +1,4 @@
-import getCategories from "../components/common/createCategory.js";
+// import getCategories from "../components/common/createCategory.js";
 import { baseUrl } from "../data/api.js";
 import getData from "../data/apiCall.js";
 import { getToken, getUserInfo } from "../utils/storage.js";

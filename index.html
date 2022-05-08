@@ -15,25 +15,43 @@
 
     <link rel="stylesheet" href="/public/css/style.css" />
 
-    <title>Document</title>
+    <title>Unlimited Marketing</title>
   </head>
   <body>
-    <nav>
-      <div class="logo">
-        <a href="/">
-          <img src="/assets/images/logo/light - 03.png" alt="" />
-        </a>
-      </div>
+    <!-- <nav class="navbar-primary mb-4">
+
+      <div class="dropdown__button"><i class="fa-solid fa-bars"></i></div>
       <div class="menu">
-        <div class="dropdown__button"><i class="fa-solid fa-bars"></i></div>
         <div class="dropdown__items" style="display: none">
           <ul class="menu-container"></ul>
+        </div>
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+    </nav> -->
+
+    <nav class="navbar mb-4">
+      <div class="container">
+        <a href="/">
+          <img class="logo" src="/assets/images/logo/light - 01.png" alt="" />
+        </a>
+        <div class="navbar__item">
+          <div class="dropdown__button"><i class="fa-solid fa-bars"></i></div>
+          <div class="dropdown__items" style="display: none">
+            <ul class="menu-container"></ul>
+          </div>
+          <a>
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart__counter"></span>
+          </a>
         </div>
       </div>
     </nav>
     <main>
-      <section>
-        <h1>Unlimited Marketing</h1>
+      <section class="container">
+        <div class="md-2">
+          <h2>Featured Items</h2>
+          <ul class="feature__products mb-2"></ul>
+        </div>
       </section>
     </main>
   </body>
