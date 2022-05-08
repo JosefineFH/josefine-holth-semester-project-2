@@ -1,106 +1,27 @@
 /* reset styles */
 * {
     color: inherit;
+    // margin: 0;
+  }
+body{
+    font-family: $base__font !important;
+
+    section{
+        padding: $base__padding;
+    }
+}
+ul{
+    list-style: none;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: $base-font !important;
-    background-color: #FFFCF7;
-  }
-  
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-  }
-  
-  // hr {
-  //   border: 0;
-  //   border-top: 1px dotted #efefef;
-  // }
-  
-  img {
-    max-width: 100%;
-  }
-  
-  h1{
-    // color: $primary;
-    margin-bottom: $base-margin;
-    font-family: $title-font;
-    // font-size: $font__size--xxl;
+}
+.logo{
+    img{
+        width: 150px;
+    }
+}
+h1{
+    font-family: $title__font;
+    font-size: $font__size--xxl;
     margin: 0;
     text-align: center;
-    font-weight: 100;
-  }
-
-  a{
-    color: $secondary;
-    text-decoration: none;
-  }
-  
-  button{
-    color: white;
-    border: 0;
-    // background: $primary;
-    border-radius: $base-border-radius;
-    padding: $base-padding;
-  }
-  
-  .error{
-    color: $error;
-    border-color: $error;
-    border-style: solid;
-    margin: $base-margin;
-    padding: $base-padding;
-    border: $base-border-radius;
-    border-width: $base-border-thickens;
-  }
-  
-  .notification{
-    color: $secondary;
-    border-color: $secondary;
-    border-style: solid;
-    margin: $base-margin;
-    padding: $base-padding;
-    border: $base-border-radius;
-    border-width: $base-border-thickens;
-  }
-
-
-  // .logo{
-//     img{
-//         width: 150px;
-//     }
-// }
-
-// button{
-//     padding:10px;
-//     border: none;
-//     margin: 0 10px;
-//     background-color: $secondary;
-//     border: 1px solid $secondary;
-//     color: white;
-//     font-family: $base__font !important;
-
-//     transition: color .3s ease-in-out, background-color .3s ease-in-out;
-
-//     &:hover{
-//         background-color: unset;
-//         border: 1px solid $secondary;
-//         color: black;
-//         font-weight: bold;
-//     }
-// }
-
-// .container{
-//     padding: $base__padding * 2 $base__padding * 3;
-
-//     h2{
-//         font-family: $title__font;
-//         font-size: $font__size--xl;
-//         padding: $base__padding * 3 0;
-//     }
-// }
+}
