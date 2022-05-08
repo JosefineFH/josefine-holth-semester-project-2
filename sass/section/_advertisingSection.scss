@@ -1,0 +1,22 @@
+.advertising__container{
+  background-color: $info;
+  max-width: unset;
+  .advertising__section{
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+      img{
+        width: 300px;
+    }
+  }
+  @media (min-width: 768px ){
+    .advertising__section{
+      flex-direction: row;
+      align-items: center;
+    justify-content: center;
+    }
+  }
+}
