@@ -1,7 +1,8 @@
 import { baseUrl } from "../../data/api.js";
 import { buyProduct } from "../../utils/addToCart.js";
+
 import { shoppingCartCounter } from "../../utils/shoppingCartCount.js";
-shoppingCartCounter()
+shoppingCartCounter();
 
 const featureProductContainer = document.querySelector(".feature__products")
 export default async function createHtml(products){  
@@ -19,19 +20,21 @@ export default async function createHtml(products){
       let description = products[i].attributes.description
       let coverImage = products[i].attributes.cover_img_url
       let price = products[i].attributes.price
-      
-      if(isFeatured === true){
-        featureProductContainer.innerHTML += `
-        <li class="card">
-        <img src="${coverImage}">
-        <div class="card__body">
-        <h2 class="card-tile">${title}</h2>
-        <p>${description}</p>
-        <button class="buy__product btn-primary" data-id="${id}" data-img="${coverImage}" data-price="${price}" data-title="${title}">Buy</button>
-        <a href="/productDetails.html?${id}">View Product</a>
-        </div>
-        </li>
-        `;
+      if(featureProductContainer){
+
+        if(isFeatured === true){
+          featureProductContainer.innerHTML += `
+          <li class="card">
+          <img src="${coverImage}">
+          <div class="card__body">
+          <h2 class="card-tile">${title}</h2>
+          <p>${description}</p>
+          <button class="buy__product btn-primary" data-id="${id}" data-img="${coverImage}" data-price="${price}" data-title="${title}">Buy</button>
+          <a href="/productDetails.html?${id}">View Product</a>
+          </div>
+          </li>
+          `;
+        }
       }
     }
 
