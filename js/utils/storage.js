@@ -22,8 +22,8 @@ export function getUserInfo() {
   return false;
 }
 
-export function saveArticle(article) {
-  saveToStorage("favorite_article", article);
+export function saveProduct(saveProduct) {
+  saveToStorage("shopping__card", saveProduct);
 }
 
 function saveToStorage(key, value) {
