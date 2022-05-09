@@ -93,7 +93,8 @@ export function shoppingCart() {
                   if (element.dataset.id === count.dataset.id) {
                     element.innerText = element.innerHTML - singleProPrice;
 
-                    totalShoppingSum.innerHTML = `${sum} €`;
+                    let lastSum = (sum -= singleProPrice);
+                    totalShoppingSum.innerHTML = `${lastSum} €`;
                   }
                 });
               }
