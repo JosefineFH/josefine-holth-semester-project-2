@@ -60,6 +60,7 @@ const idInput = document.querySelector("#id");
     message.innerHTML = "add category";
   } else {
     selectedCategories.value = editData.attributes.category.data.id;
+    selectedCategories.classList.add  = "chosenCategory"
   }
 
   for (let i = 0; i < selectedCategories.options.length; i++) {

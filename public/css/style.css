@@ -39,6 +39,7 @@ h1 {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 a:hover {
@@ -1065,6 +1066,11 @@ button {
   color: red;
 }
 
+.form-check-input:checked {
+  background-color: #de4e45;
+  border-color: #de4e45;
+}
+
 .p-0 {
   padding: 0;
 }
@@ -1494,4 +1500,8 @@ button {
 
 .menu a.hide {
   display: none;
+}
+
+.menu-container {
+  color: black;
 }
