@@ -1,5 +1,5 @@
 import createProductList from "../admin/adminDashboard.js";
-import getEditData from "../admin/editProduct.js";
+// import getEditData from "../admin/editProduct.js";
 import { baseUrl } from "../data/api.js";
 
 export default async function getData(){
@@ -14,9 +14,9 @@ export default async function getData(){
     if(pathname === "/admin/adminDashboard.html"){
       createProductList(json);
     }
-    if(pathname === "/admin/editProduct.html"){
-      getEditData(json)
-    }
+    // if(pathname === "/admin/editProduct.html"){
+    //   getEditData(json)
+    // }
 
   } catch (error) {
     console.log(error)

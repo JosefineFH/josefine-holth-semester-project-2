@@ -1,9 +1,9 @@
-import { baseUrl } from "../../data/api.js";
+import { baseUrl } from "../data/api.js";
 
-export default async function getCategories(){
+export async function createCategoryList(){
   const categorySelect = document.querySelector("#category");
 
-  try {
+    try {
     const categoriesUrl = baseUrl + "categories";
     const response = await fetch (categoriesUrl);
     const json = await response.json(); 

@@ -12,13 +12,20 @@
   <title>Admin Dashboard</title>
 </head>
 <body>
-  <nav>
-    <div class="logo"><img src="/assets/images/logo/light - 03.png" alt="" /></div>
-    <div class="menu">
-      <div class="dropdown__button"><i class="fa-solid fa-bars"></i></div>
-      <div class="dropdown__items" style="display: none;">
-        <ul class="menu-container"> 
-        </ul>
+  <nav class="navbar mb-4">
+    <div class="container">
+      <a href="/">
+        <img class="logo" src="/assets/images/logo/light - 01.png" alt="" />
+      </a>
+      <div class="navbar__item">
+        <div class="dropdown__button"><i class="fa-solid fa-bars"></i></div>
+        <div class="dropdown__items" style="display: none">
+          <ul class="menu-container"></ul>
+        </div>
+        <a href="/shoppingCart.html">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart__counter"></span>
+        </a>
       </div>
     </div>
   </nav>

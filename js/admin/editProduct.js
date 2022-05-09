@@ -1,8 +1,9 @@
-// import getCategories from "../components/common/createCategory.js";
 import { baseUrl } from "../data/api.js";
 import getData from "../data/apiCall.js";
 import { getToken, getUserInfo } from "../utils/storage.js";
+import { createCategoryList } from "./createCategory.js";
 
+createCategoryList();
 
 const token = getToken();
 const user = getUserInfo();
@@ -10,86 +11,81 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 const { pathname } = document.location;
-const productName = document.querySelector(".product__name")
+const productName = document.querySelector(".product__name");
 
-
-const message = document.querySelector(".message")
+const message = document.querySelector(".message");
 const form = document.querySelector("form");
 const titleInput = document.querySelector("#title");
 const descriptionInput = document.querySelector("#description");
 const featuredItemValue = document.querySelector("#featured");
-const freeItemValue = document.querySelector("#free__product")
+const freeItemValue = document.querySelector("#free__product");
 const priceValue = document.querySelector("#price");
 
+// Inputs for the images
 const coverInput = document.querySelector("#cover");
-const productImageInput = document.querySelector("#product__images")
-const selectedCategories = document.querySelector("#category")
+const coverInputAltText = document.querySelector("#cover__altText");
+const productImageInput = document.querySelector("#product__images");
+const productImageAltTextInput = document.querySelector("#cover__altText");
+const selectedCategories = document.querySelector("#category");
 
-const altTextValue = document.querySelector("#alt_text")
+// console.log(coverInput)
+// console.log(productImageInput)
 const idInput = document.querySelector("#id");
-const loader = document.querySelector(".loader")
+// const loader = document.querySelector(".loader")
 
-export default function getEditData(products) {
-  getCategories();
-  
-  const productList = products.data;
+(async function () {
+  const url = baseUrl + "products/" + id + "?populate=*";
+  const response = await fetch(url);
+  const json = await response.json();
+  const editData = json.data;
+  console.log(editData.attributes);
 
-  productList.forEach(product => {
-    if (product.id == id) {      
-      console.log(product)
-      productName.innerHTML = product.attributes.title
-      let featuredItem = product.attributes.featured;
-      let freeItem = product.attributes.free
+  productName.innerHTML = editData.attributes.title;
+  let featuredItem = editData.attributes.featured;
+  let freeItem = editData.attributes.free;
 
- 
+  titleInput.value = editData.attributes.title;
+  descriptionInput.value = editData.attributes.description;
+  priceValue.value = editData.attributes.price;
+  idInput.value = editData.id;
 
-      titleInput.value = product.attributes.title;
-      descriptionInput.value = product.attributes.description;
-      priceValue.value = product.attributes.price;
-      altTextValue.value = product.attributes.image_alt_text;
-      idInput.value = product.id;
-      
-      let category = product.attributes.category.data
-      if(category == null){
-        message.innerHTML = "add category"
-      } else {
-        selectedCategories.value = product.attributes.category.data.id
+  coverInput.value = editData.attributes.cover_img_url;
+  coverInputAltText.value = editData.attributes.cover_image_alt_text;
+  productImageInput.value = editData.attributes.product_image_1;
+  productImageAltTextInput.value = editData.attributes.product_image_1_altText;
+
+  let category = editData.attributes.category.data;
+
+  if (category == null) {
+    message.innerHTML = "add category";
+  } else {
+    selectedCategories.value = editData.attributes.category.data.id;
+  }
+
+  for (let i = 0; i < selectedCategories.options.length; i++) {
+    let optionsId = selectedCategories.options[i].value;
+
+    if (editData.attributes.category.data == null) {
+      message.innerHTML = "";
+      message.innerHTML += `<p>Category is missing</p>`;
+    } else {
+      if (optionsId == editData.attributes.category.data.id) {
+        selectedCategories.options[i].classList.add("chosenCategory");
       }
-
-      for (let i = 0; i < selectedCategories.options.length; i++) {
-        let optionsId = selectedCategories.options[i].value;
-
-        if (product.attributes.category.data == null) {
-          message.innerHTML = ""
-          message.innerHTML += `<p>Category is missing</p>`;
-
-        } else {
-          if (optionsId == product.attributes.category.data.id) {
-            selectedCategories.options[i].classList.add("chosenCategory");
-          }
-        }
-      }
-      
+    }
+  }
       if (featuredItem === true) {
         featuredItemValue.checked = true
       }
-      
+
       if (freeItem === true) {
         freeItemValue.checked = true
       }
 
-      let imageDoesNotExist = product.attributes.cover_image.data
-      const coverImageContainer = document.querySelector(".cover__image")
-
-      if(imageDoesNotExist === null){
-        message.innerHTML = `<p>There is noe cover image here of the product, please add one.</p>`
-      } else {
-        coverImageContainer.style.display = "none"
-      }
-    }
-  });
   form.addEventListener("submit", submitChanges);
-}
+  
+})();
+
 
 function submitChanges(event) {
   event.preventDefault();
@@ -102,35 +98,32 @@ function submitChanges(event) {
   const featured = featuredItemValue.checked;
   const free = freeItemValue.checked;
   const price = priceValue.value.trim();
-  const cover_image = coverInput.files;
-  const productImages = productImageInput.files
-  const altText = altTextValue.value.trim();
   const category = selectedCategories.value.trim();
+  const cover_img_url = coverInput.value.trim();
+  const cover_image_alt_text = coverInputAltText.value.trim();
+  const product_image_1 = productImageInput.value.trim();
+  const product_image_1_altText = productImageAltTextInput.value.trim();
 
-  const data = JSON.stringify({ id, title, description, featured, free, price, altText, category })
+  const data = JSON.stringify({ id, title, description, featured, free, price, category, cover_img_url, cover_image_alt_text, product_image_1, product_image_1_altText })
+  console.log(data)
 
-  updateProduct(data, id, cover_image, productImages)
+  updateProduct(data, id)
 }
 
-async function updateProduct(data, id, cover_image, productImages) {
-  loader.innerHTML = "loading";
-  console.log(loader)
+async function updateProduct(data, id) {
+  // loader.innerHTML = "loading";
+  // console.log(loader)
   
   const updateUrl = baseUrl + "products/" + id + "?populate=*"
-
   const formData = new FormData();
-
-
-  formData.append("files.cover_image", cover_image[0]);
-  formData.append("files.images", productImages[0])
+  
   formData.append("data", data);
-
+  console.log(formData)
   const options = {
     method: "PUT",
     body: formData,
     headers: {
       // "Content-Type": "application/json",
-      
       Authorization: `Bearer ${token}`,
     },
   };

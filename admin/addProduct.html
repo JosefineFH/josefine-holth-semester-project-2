@@ -18,13 +18,20 @@
 </head>
 
 <body>
-  <nav>
-    <div class="logo"><img src="/assets/images/logo/light - 03.png" alt="" /></div>
-    <div class="menu">
-      <div class="dropdown__button"><i class="fa-solid fa-bars"></i></div>
-      <div class="dropdown__items" style="display: none;">
-        <ul class="menu-container">
-        </ul>
+  <nav class="navbar mb-4">
+    <div class="container">
+      <a href="/">
+        <img class="logo" src="/assets/images/logo/light - 01.png" alt="" />
+      </a>
+      <div class="navbar__item">
+        <div class="dropdown__button"><i class="fa-solid fa-bars"></i></div>
+        <div class="dropdown__items" style="display: none">
+          <ul class="menu-container"></ul>
+        </div>
+        <a href="/shoppingCart.html">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart__counter"></span>
+        </a>
       </div>
     </div>
   </nav>
@@ -72,7 +79,7 @@
               <label class="form-label" for="cover">Cover Image </label>
             </div>
             <div class="col-auto">
-              <input type="file" id="cover" name="cover" accept="image/png, image/jpeg" class="form-control" />
+              <input type="url" id="cover" name="cover" accept="image/png, image/jpeg" class="form-control" />
             </div>
           </div>
 
@@ -82,7 +89,7 @@
             </div>
             <div class="col-auto">
 
-              <input type="file" id="product__images" name="images" accept="image/png, image/jpeg"
+              <input type="url" id="product__images" name="images" accept="image/png, image/jpeg"
                 class="form-control" />
             </div>
           </div>

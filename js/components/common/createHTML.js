@@ -25,13 +25,13 @@ export default async function createHtml(products){
         if(isFeatured === true){
           featureProductContainer.innerHTML += `
           <li class="card">
-          <img src="${coverImage}">
-          <div class="card__body">
-          <h2 class="card-tile">${title}</h2>
-          <p>${description}</p>
-          <button class="buy__product btn-primary" data-id="${id}" data-img="${coverImage}" data-price="${price}" data-title="${title}">Buy</button>
-          <a href="/productDetails.html?id=${id}">View Product</a>
-          </div>
+            <img src="${coverImage}">
+            <div class="card__body row justify-space-around">
+              <h2 class="card-tile">${title}</h2>
+              <a href="/productDetails.html?id=${id}">View Product</a>
+              <p>${description}</p>
+              <button class="buy__product btn-primary" data-id="${id}" data-img="${coverImage}" data-price="${price}" data-title="${title}">Buy</button>
+            </div>
           </li>
           `;
         }

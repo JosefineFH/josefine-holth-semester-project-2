@@ -18,13 +18,20 @@
 </head>
 
 <body>
-  <nav>
-    <div class="logo"><img src="/assets/images/logo/light - 03.png" alt="" /></div>
-    <div class="menu">
-      <div class="dropdown__button"><i class="fa-solid fa-bars"></i></div>
-      <div class="dropdown__items" style="display: none;">
-        <ul class="menu-container">
-        </ul>
+  <nav class="navbar mb-4">
+    <div class="container">
+      <a href="/">
+        <img class="logo" src="/assets/images/logo/light - 01.png" alt="" />
+      </a>
+      <div class="navbar__item">
+        <div class="dropdown__button"><i class="fa-solid fa-bars"></i></div>
+        <div class="dropdown__items" style="display: none">
+          <ul class="menu-container"></ul>
+        </div>
+        <a href="/shoppingCart.html">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart__counter"></span>
+        </a>
       </div>
     </div>
   </nav>
@@ -73,30 +80,37 @@
               <label class="form-label" for="cover">Cover Image </label>
             </div>
             <div class="col-auto">
-              <input type="file" id="cover" name="cover" accept="image/png, image/jpeg" class="form-control" />
+              <input type="text" id="cover" name="cover"  class="form-control" />
+            </div>
+
+            <div class="col-auto">
+              <label class="form-label" for="cover__altText">Cover Image AltText</label>
+            </div>
+            <div class="col-auto">
+              <input type="text" id="cover__altText" name="cover__altText"  class="form-control" />
             </div>
           </div>
 
           <div class="mb-3 row g-3 align-items-center">
             <div class="col-auto">
-              <label class="form-label" for="images">Images</label>
+              <label class="form-label" for="images">Product Image</label>
             </div>
             <div class="col-auto">
 
-              <input type="file" id="product__images" name="images" accept="image/png, image/jpeg"
-                class="form-control" />
+              <input type="text" id="product__images" name="images"  class="form-control" />
             </div>
+
+            <div class="col-auto">
+              <label class="form-label" for="product__image--altText">Product Image Alt Text</label>
+            </div>
+            <div class="col-auto">
+
+              <input type="text" id="product__image--altText" name="product__image--altText"  class="form-control" />
+            </div>
+
+
           </div>
-
-          <div class="mb-3 row g-3 align-items-center">
-            <div class="col-auto">
-              <label for="alt_text">Alt text</label>
-            </div>
-            <div class="col-auto">
-              <input class="form-control" type="text" name="alt_text" id="alt_text" />
-            </div>
-          </div>
-
+          
           <div class="mb-3 row g-3 align-items-center">
             <label for="category">Category </label>
             <select class="form-select" name="category" id="category">
