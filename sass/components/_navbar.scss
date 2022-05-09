@@ -7,6 +7,7 @@
 }
 
 .navbar {
+  background-color: #FFFCF7;
   @extend %flex-layout;
   padding: $base-padding $base-padding * 2;
   box-shadow: $base-box--shadow;
@@ -57,7 +58,6 @@
 
 .dropdown__items{
   display: none;
-  background-color: white;
   position: absolute;
   margin: 0;
   top: 0;
