@@ -42,18 +42,17 @@ async function getFormValue(event) {
   const product_image_1 = productImageInput.value.trim();
   const product_image_1_altText = productImageAltTextInput.value.trim();
 
-  const data = JSON.stringify({ id, title, description, featured, free, price, category, cover_img_url, cover_image_alt_text, product_image_1, product_image_1_altText })
+  const data = JSON.stringify({ title, description, featured, free, price, category, cover_img_url, cover_image_alt_text, product_image_1, product_image_1_altText })
   addProduct(data)
+  form.addEventListener("submit", addProduct)
 }
 
-form.addEventListener("submit", addProduct)
 
 async function addProduct(data){
-  console.log(data)
-  const updateUrl = baseUrl + "products";
   const formData = new FormData();
-
   formData.append("data", data);
+
+  const updateUrl = baseUrl + "products";
 
   const options = {
     method: "POST",
@@ -64,7 +63,6 @@ async function addProduct(data){
     },
   };
 
-  console.log(options)
 
   try {
     const response = await fetch(updateUrl, options);
