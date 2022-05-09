@@ -30,7 +30,7 @@ export default async function createHtml(products){
           <h2 class="card-tile">${title}</h2>
           <p>${description}</p>
           <button class="buy__product btn-primary" data-id="${id}" data-img="${coverImage}" data-price="${price}" data-title="${title}">Buy</button>
-          <a href="/productDetails.html?${id}">View Product</a>
+          <a href="/productDetails.html?id=${id}">View Product</a>
           </div>
           </li>
           `;
