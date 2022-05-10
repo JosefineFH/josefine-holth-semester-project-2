@@ -1,5 +1,3 @@
-// import getData from "../data/apiCall.js";
-// import { getToken, getUserInfo } from "../utils/storage.js";
 import { removeProduct } from "./deleteProduct.js";
 
 export default function createProductList(products){
@@ -30,8 +28,6 @@ export default function createProductList(products){
   removeButton.forEach(button => {
     let postId = button.dataset.id;
     button.addEventListener("click", () => {
-      console.log(postId)
-      console.log(button)
       removeProduct(postId)
     })
     
