@@ -4,8 +4,10 @@ import { searchForProduct } from "./utils/serchForProduct.js";
 import { baseUrl } from "./data/api.js";
 import { createFeatureProduct } from "./components/featuredProduct.js";
 import createProductList from "./admin/adminDashboard.js";
+import { freeProducts } from "./components/common/freeProducts.js";
 
-getData()
+getData();
+
 export default async function getData(){
   try {
     const productsUrl = baseUrl + "products?populate=*";
@@ -16,9 +18,8 @@ export default async function getData(){
     createHtml(products);
     searchForProduct(products)
     createFeatureProduct(products)
-
+    freeProducts(products)
     
-    createFeatureProduct(json)
   } catch (error) {
     console.log(error)
   }
