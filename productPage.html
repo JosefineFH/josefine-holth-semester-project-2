@@ -1,40 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel='icon' type='image/png' href='/assets/images/logo/browserIconLogo.png'>
+  <meta name='description' content='Unlimited Marketing. Let us help you with your marketing.'>
 
-  <link rel="stylesheet" href="/public/css/style.css">
 
-  <title>Document</title>
+  <link rel="stylesheet" href="/public/css/style.css" />
+
+  <title>Unlimited Marketing</title>
 </head>
+
 <body>
-  <nav>
-    <div class="logo">
+  <nav class="navbar mb-4">
+    <div class="container">
       <a href="/">
-        <img src="/assets/images/logo/light - 03.png" alt="" />
+        <img class="logo" src="/assets/images/logo/light - 01.png" alt="" />
       </a>
-    </div>
-    <div class="menu">
-      <div class="dropdown__button"><i class="fa-solid fa-bars"></i></div>
-      <div class="dropdown__items" style="display: none">
-        <ul class="menu-container"></ul>
+      <div class="navbar__item">
+        <div class="dropdown__button"><i class="fa-solid fa-bars"></i></div>
+        <div class="dropdown__items" style="display: none">
+          <ul class="menu-container"></ul>
+        </div>
+        <a href="/shoppingCart.html">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart__counter"></span>
+        </a>
       </div>
     </div>
   </nav>
-  <h1>Products Page</h1>
+  <main>
+    <section class="container">
+      <h1>Products Page</h1>
+    </section>
+    <section class="container">
+      <form>
+        <label for="search" class="search">Search </label>
+        <input type="text" id="search" name="search" />
+      </form>
+    </section>
+    <section class="container">
+      <!-- <div>
+        <h2>featured product</h2>
+        <ul class="feature__products mb-2 row gap-2 justify-center"></ul>
+      </div> -->
+      <h2>Product's</h2>
+      <ul class="products__container mb-2 row gap-2 justify-center">
 
-  <form>
-    <label for="search" class="search">Search </label>
-    <input type="text" id="search" name="search" />
-  </form>
+      </ul>
+      <div class="free__products">
 
-  <section class="product__list"></section>
+      </div>
+    </section>
+  </main>
 </body>
-<script src="/js/components/createHTML.js" type="module"></script>
+<script src="/js/script.js" type="module"></script>
 <script src="/js/components/navbar.js"></script>
+<!-- <script src="/js/pages/productPage.js" type="module"></script> -->
 
 </html>

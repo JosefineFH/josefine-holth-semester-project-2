@@ -1,12 +1,17 @@
 import { baseUrl } from "../data/api.js";
-import getData from "../data/apiCall.js";
+// import getData from "../data/apiCall.js";
 import { getToken, getUserInfo } from "../utils/storage.js";
 import { createCategoryList } from "./createCategory.js";
 
 createCategoryList();
 
-const token = getToken();
 const user = getUserInfo();
+const token = getToken();
+
+if (user.length === 0 && token.length === 0) {
+  document.location.href = "/login.html";
+}
+
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
@@ -38,7 +43,6 @@ const idInput = document.querySelector("#id");
   const response = await fetch(url);
   const json = await response.json();
   const editData = json.data;
-  console.log(editData.attributes);
 
   productName.innerHTML = editData.attributes.title;
   let featuredItem = editData.attributes.featured;
