@@ -1,31 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel='icon' type='image/png' href='/assets/images/logo/browserIconLogo.png'>
+    <meta name='description' content='Unlimited Marketing. Let us help you with your marketing.'>
 
-  <link rel="stylesheet" href="/css/style.css">
 
-  <title>Document</title>
-</head>
-<body>
-  <nav>
-    <div class="logo">Logo</div>
-    <div class="menu">
-      <div class="dropdown__button"><i class="fa-solid fa-bars"></i></div>
-      <div class="dropdown__items" style="display: none;">
-        <ul>
-          <li><a href="/productPage.html">Shop</a></li>
-        </ul>
+    <link rel="stylesheet" href="/public/css/style.css" />
+
+    <title>Unlimited Marketing</title>
+  </head>
+  <body>
+    <nav class="navbar mb-4">
+      <div class="container">
+        <a href="/">
+          <img class="logo" src="/assets/images/logo/light - 01.png" alt="" />
+        </a>
+        <div class="navbar__item">
+          <div class="dropdown__button"><i class="fa-solid fa-bars"></i></div>
+          <div class="dropdown__items" style="display: none">
+            <ul class="menu-container"></ul>
+          </div>
+          <a href="/shoppingCart.html">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart__counter"></span>
+          </a>
+        </div>
       </div>
-    </div>
-  </nav>
-  <h1>Product</h1>
-</body>
-<script src="/js/components/createHTML.js" type="module"></script>
-<script src="/js/components/navbar.js"></script>
+    </nav>
+    <main>
 
+    </main>
+  </body>
+  <script src="/js/script.js" type="module"></script>
+  <script src="/js//components//common/specificProduct.js"></script>
 </html>
