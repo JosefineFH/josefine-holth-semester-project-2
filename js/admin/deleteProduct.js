@@ -18,6 +18,7 @@ export async function removeProduct(id){
     
     try {
       const response = await fetch(url, options);
+      window.location.replace("/admin/adminDashboard.html")
     } catch (error) {
       errorMessage.innerHTML = "<p>Something whent wrong when you ware trying to delete this.</p>"
     }

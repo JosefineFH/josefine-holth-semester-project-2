@@ -1,5 +1,5 @@
 import { baseUrl } from "../data/api.js";
-const homeBannerContainer = document.querySelector(".home__banner")
+const homeBannerContainer = document.querySelector(".hero__banner")
 
 export async function getHomeBanner() {
 
@@ -9,16 +9,17 @@ export async function getHomeBanner() {
     try {
       const response = await fetch(reviewUrl);
       const details = await response.json();
-      const homeBannerBaseUrl = details.data.attributes.Hero_banner.data
-  
-      homeBannerBaseUrl.forEach(bannerImage => {
+      const heroBannerBaseUrl = details.data.attributes.Hero_banner.data
+      const heroBannerAltText = details.data.attributes.Hero_banner_alt_text
+      console.log(details)
+      heroBannerBaseUrl.forEach(bannerImage => {
   
         homeBannerContainer.innerHTML = `
-        <div class="home__banner--image" style="background-image: url('${bannerImage.attributes.url}');")>
+        <div class="home__banner--image" aria-label="${heroBannerAltText}" style="background-image: url('${bannerImage.attributes.url}');")>
           <div></div>
           <div class="home__banner--text">
-          <h2 style="text-align:center">Let's Scale Up Your Business</h2>
-            <h1>Unlimited Marketing</h1>
+          <h2 class="text-white bg-primary" >Let's Scale Up Your Business</h2>
+            <h1 class="text-white bg-primary" >Unlimited Marketing</h1>
   
           </div>
         </div>`

@@ -1,6 +1,7 @@
 import { getToken, getUserInfo } from "../utils/storage.js";
 import { baseUrl } from "../data/api.js";
 import { createCategoryList } from "./createCategory.js";
+import { displayMessage } from "../components/common/displayMessage.js";
 
 createCategoryList();
 
@@ -43,6 +44,14 @@ async function getFormValue(event) {
   const product_image_1_altText = productImageAltTextInput.value.trim();
 
   const data = JSON.stringify({ title, description, featured, free, price, category, cover_img_url, cover_image_alt_text, product_image_1, product_image_1_altText })
+  console.log(data)
+  if (title.length < 3 || description.length < 10 || price.length < 2 || category.length === 1 || cover_img_url.length === 1 || cover_image_alt_text.length < 5 ) {
+  console.log("error")
+  displayMessage("error", "There is something missing in the form for adding products", ".message__container")
+  
+}
+
+
   addProduct(data)
   form.addEventListener("submit", addProduct)
 }
@@ -69,6 +78,7 @@ async function addProduct(data){
     const json = await response.json();
 
     console.log(json)
+    window.location.replace("/admin/adminDashboard.html")
     
     if(json.error){
       console.log("error")

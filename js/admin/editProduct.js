@@ -137,7 +137,7 @@ async function updateProduct(data, id) {
     const response = await fetch(updateUrl, options);
     const json = await response.json();
     console.log(json)
-    // window.location.href = "/admin/adminDashboard.html";
+    window.location.replace("/admin/adminDashboard.html")
     if(json.error){
       message.innerHTML = `<p>There is an error. Pleas contact us to fix the problem</p>`
     }

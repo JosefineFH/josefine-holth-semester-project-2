@@ -5,6 +5,7 @@ import { baseUrl } from "./data/api.js";
 import { createFeatureProduct } from "./components/featuredProduct.js";
 import createProductList from "./admin/adminDashboard.js";
 import { freeProducts } from "./components/common/freeProducts.js";
+import { getHomeBanner } from "./components/getHomeBanner.js";
 
 getData();
 
@@ -19,6 +20,7 @@ export default async function getData(){
     searchForProduct(products)
     createFeatureProduct(products)
     freeProducts(products)
+    getHomeBanner()
     
   } catch (error) {
     console.log(error)
