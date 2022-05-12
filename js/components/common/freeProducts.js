@@ -8,24 +8,31 @@ export function freeProducts(data){
 
   products.forEach(product => {
     const isFree = product.attributes.free
+
     if(freeProductsContainer){
+
       if(isFree === true){
         freeProductsContainer.innerHTML += `
         <li class="card">
-          <img src="${product.attributes.cover_img_url}">
-          <div class="card__body row justify-space-around">
-            <h2 class="card-tile">${product.attributes.title}</h2>
-            <a href="/productDetails.html?id=${product.id}">View Product</a>
-            <p>${product.attributes.description}</p>
-            <button class="buy__product btn-primary" data-id="${product.id}" data-img="${product.attributes.cover_img_url}" data-price="${product.attributes.price}" data-title="${product.attributes.title}">Buy</button>
+        <div class="card__item image" style="background-image: url('${product.attributes.cover_img_url}')" aria-label="${product.attributes.cover_image_alt_text}">
+        <p class="product__mark">Free</p>
+        </div>
+        <div class="card__item  p-1">
+        <h2>${product.attributes.title}</h2>
+        </div>
+        <div class="card__item flex  p-1">
+        <p>${product.attributes.description}</p>
+        </div>
+          <div class="card__footer justify-space-between p-1">
+            <a class="btn-secondary text-white" href="/productDetails.html?id=${product.id}">View Product</a>
+            
+            <button class="btn-secondary text-white" data-id="${product.id}" data-img="${product.attributes.cover_img_url}" data-price="${product.attributes.price}" data-title="${product.attributes.title}">Buy</button>
           </div>
         </li>
         `;
       }
     }
-    
   });
-
 
   const addToCartbutton = document.querySelectorAll(".buy__product")
 

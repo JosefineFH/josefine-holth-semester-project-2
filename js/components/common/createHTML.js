@@ -16,19 +16,40 @@ export default async function createHtml(data){
       let id = products[i].id
       let description = products[i].attributes.description
       let coverImage = products[i].attributes.cover_img_url
+      let coverImageAltText = products[i].attributes.cover_image_alt_text
       let price = products[i].attributes.price
 
         productContainer.innerHTML += `
         <li class="card">
-        <img src="${coverImage}">
-          <div class="card__body row justify-space-around">
-            <h2 class="card-tile">${title}</h2>
-            <a href="/productDetails.html?id=${id}">View Product</a>
-            <p>${description}</p>
-            <button class="buy__product btn-primary" data-id="${id}" data-img="${coverImage}" data-price="${price}" data-title="${title}">Buy</button>
+        <div class="card__item image" style="background-image: url('${coverImage}')" aria-label="${coverImageAltText}" >
+        <div class="product__mark"></div>
+        </div>
+        <div class="card__item  p-1">
+        <h2>${title}</h2>
+        </div>
+        <div class="card__subtext  p-1">
+        <p>${price} €</p>
+        </div>
+        <div class="card__item flex  p-1">
+        <p>${description}</p>
+        </div>
+          <div class="card__footer justify-space-between p-1">
+            <a class="btn-secondary text-white" href="/productDetails.html?id=${id}">View Product</a>
+            
+            <button class="btn-secondary text-white" data-id="${id}" data-img="${coverImage}" data-price="${price}" data-title="${title}">Buy</button>
           </div>
         </li>
         `;
+        const productMark = document.querySelectorAll(".product__mark")
+
+        for (let i = 0; i < productMark.length; i++) {
+          if(products[i].attributes.free == true){
+            productMark[i].innerHTML = '<p>Free</p>'
+          }
+          if(products[i].attributes.featured === true){
+            productMark[i].innerHTML = '<p>Featured</p>'
+          }
+        }
       }
     }
 
