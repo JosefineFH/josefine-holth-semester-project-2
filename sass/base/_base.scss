@@ -16,11 +16,6 @@ ul {
   list-style-type: none;
 }
 
-// hr {
-//   border: 0;
-//   border-top: 1px dotted #efefef;
-// }
-
 img {
   max-width: 100%;
 }
@@ -34,22 +29,18 @@ h1{
   text-align: center;
   font-weight: 100;
 }
-
+h2{
+  font-family: $title-font;
+  font-size: $font-size--xl;
+  text-align: center;
+  padding: $base-padding * 3 0;
+}
 a{
   text-decoration: none;
   color: black;
   &:hover{
     color: $secondary;
   }
-}
-
-
-button{
-  color: white;
-  border: 0;
-  // background: $primary;
-  border-radius: $base-border-radius;
-  padding: $base-padding;
 }
 
 .error{

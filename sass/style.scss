@@ -4,6 +4,7 @@
 
 // base & layout
 @import "./base/base";
+@import "./layout/homeBanner";
 
 @import "./layout/grid";
 
@@ -15,6 +16,7 @@
 @import "./components/buttons";
 @import "./components/error";
 @import "./components/input";
+@import "./components/footer";
 
 // utilities (margin, padding, opacity)
 @import "./base/utilities";
@@ -25,18 +27,14 @@
 
 @import "./components/navbar"; 
 // @import "./components/prodcutCard";
-// @import "./components/buttons";
 // @import "./components/loader";
 
 // Layout
 // @import "./layout/login";
-// @import "./layout/homeBanner";
+
 // @import "./layout/specificDetailPage";
 
 // Pages
 // @import "./pages/adminDashboard";
 // @import "./pages/editProducts";
 // @import "./pages/shoppingCart";
-
-// Sections
-// @import "./sections/advertisingSection";

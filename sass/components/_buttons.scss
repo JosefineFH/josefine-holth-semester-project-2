@@ -4,10 +4,12 @@
   display: inline-block;
   border: 0;
   padding: $base-padding $base-padding * 2;
-  border-radius: $base-border-radius;
+  border-radius: 2px;
   background-color: $bg-color;
   text-transform: uppercase;
-  border: $bg-color solid $base-border-thickens
+  border: $bg-color solid $base-border-thickens;
+  font-weight: bold;
+  font-size: $font-size--md;
 }
 .btn{
   @include btn
@@ -39,3 +41,15 @@
       }
   }
 }
+  // .button,
+  // button {
+  //   color: unset;
+  //   border: 0;
+  //   padding: unset;
+  //   font-weight: bold;
+  //   font-family: $base-font;
+  //   font-size: $font-size--md;
+  //   background-color: $secondary;
+  //   padding: $base-padding;
+  //   border: none;
+  // }

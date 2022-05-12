@@ -27,7 +27,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $breakpoint-tablet) {
   .fas, .fa-bars {
     font-size: $font-size--lg;
 
@@ -46,7 +46,7 @@
   font-size: 35px;
   z-index: 99;
   padding: 0 $base-padding;
-  @media (min-width: 768px) {
+  @media (min-width: $breakpoint-tablet) {
     display: none;
   }
 }
@@ -84,7 +84,7 @@
     }
   }
 }
-@media (min-width: 768px) {
+@media (min-width: $breakpoint-tablet) {
   nav{
     flex-direction: row;
     align-items: center;
