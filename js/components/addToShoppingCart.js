@@ -2,10 +2,8 @@ import { buyProduct } from "../utils/addToCart.js"
 
 
 export default function addToShoppingCart() {
-  console.log("click")
-  // console.log(button)
   const button = event.target
-  console.log(button)
+
       const buttonId = button.dataset.id
       const buttonCoverImage = button.dataset.img
       const buttonPrice = button.dataset.price

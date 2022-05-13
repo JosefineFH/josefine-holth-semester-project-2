@@ -3,6 +3,7 @@ import addToShoppingCart from "../addToShoppingCart.js";
 export function freeProducts(data){
   
   const freeProductsContainer = document.querySelector(".free__products")
+  const freeContainer = document.querySelector(".free__header")
 
   const products = data.data
 
@@ -10,8 +11,8 @@ export function freeProducts(data){
     const isFree = product.attributes.free
 
     if(freeProductsContainer){
-
       if(isFree === true){
+        freeContainer.innerHTML = `<h2>Free items</h2>`
         freeProductsContainer.innerHTML += `
         <li class="card">
         <div class="card__item image" style="background-image: url('${product.attributes.cover_img_url}')" aria-label="${product.attributes.cover_image_alt_text}">
@@ -33,7 +34,7 @@ export function freeProducts(data){
       }
     }
   });
-
+  
   const addToCartbutton = document.querySelectorAll(".buy__product")
 
   addToCartbutton.forEach(button => {

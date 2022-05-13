@@ -36,8 +36,6 @@ async function loginUser(email, password) {
  
   const data = JSON.stringify({ identifier: email, password: password });
 
-  console.log(data)
-
   const option = {
     method: "POST",
     body: data,
@@ -45,8 +43,7 @@ async function loginUser(email, password) {
       "Content-Type": "application/json",
     },
   };
-  console.log(data)
-
+ 
   try {
     const response = await fetch(loginUrl, option)
     const json = await response.json()

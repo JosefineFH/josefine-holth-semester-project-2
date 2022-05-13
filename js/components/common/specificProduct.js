@@ -21,7 +21,6 @@ try {
   const response = await fetch(productsUrl);
   const data = await response.json();
   const product = data.data.attributes;
-  console.log(product)
 
   productTitle.innerHTML = `<h1 >${product.title}</h1>`;
   coverImage.innerHTML = `<img src="${product.cover_img_url}" alt="${product.cover_image_alt_text}">`

@@ -11,7 +11,7 @@ export async function getHomeBanner() {
       const details = await response.json();
       const heroBannerBaseUrl = details.data.attributes.Hero_banner.data
       const heroBannerAltText = details.data.attributes.Hero_banner_alt_text
-      console.log(details)
+
       heroBannerBaseUrl.forEach(bannerImage => {
   
         homeBannerContainer.innerHTML = `

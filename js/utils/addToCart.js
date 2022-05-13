@@ -5,7 +5,6 @@ export function buyProduct(data){
   const shoppingCartCount = document.querySelector(".cart__counter")
 
   currentShoppingCart.forEach(items => {
-    console.log(items)
   });
 
 
@@ -13,7 +12,7 @@ export function buyProduct(data){
 
   if(currentShoppingCart.length === 0){
     currentShoppingCart.push(data)
-    console.log(currentShoppingCart)
+
     saveProduct(currentShoppingCart)
   } else {
     currentShoppingCart.push(data)
@@ -22,6 +21,5 @@ export function buyProduct(data){
 
   count++
   shoppingCartCount.innerHTML = count
-  console.log(count)
 
 }
