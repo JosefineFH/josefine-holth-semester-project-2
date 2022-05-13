@@ -38,7 +38,7 @@ h1 {
 
 h2 {
   font-family: "Noto Serif Display Extra Condensed", serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
   padding: 2.25rem 0;
 }
@@ -655,6 +655,12 @@ a:hover {
           box-shadow: 0 3px 6px #52555840, 0 3px 6px #52555840;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+}
+
+.card .card__item p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .card .image {
