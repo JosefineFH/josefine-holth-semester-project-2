@@ -1,141 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <title>Admin | Edit Product</title>
+  </head>
 
-  <link rel="stylesheet" href="/public/css/style.css">
-  <title>Admin | Edit Product</title>
-</head>
-
-<body>
-  <nav class="navbar mb-4">
-    <div class="container">
-      <a href="/">
-        <img class="logo" src="/assets/images/logo/light - 01.png" alt="" />
-      </a>
-      <div class="navbar__item">
-        <div class="dropdown__button"><i class="fa-solid fa-bars"></i></div>
-        <div class="dropdown__items" style="display: none">
-          <ul class="menu-container"></ul>
-        </div>
-        <a href="/shoppingCart.html">
-          <i class="fas fa-shopping-cart"></i>
-          <span class="cart__counter"></span>
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <main>
-    <section>
-      <div>
-        <h1>Edit - <span class="product__name"></span></h1>
-      </div>
-
+  <body>
+    <nav class="navbar mb-4">
       <div class="container">
-        <div class="message"></div>
-        <form>
-
-          <div class="mb-3">
-            <label class="col-form-label" for="title">Title</label>
-            <input class="form-control" type="text" name="title" id="title" />
-
+        <a href="/">
+          <img class="logo" src="/assets/images/logo/light - 01.png" alt="" />
+        </a>
+        <div class="navbar__item">
+          <div class="dropdown__button"><i class="fa-solid fa-bars"></i></div>
+          <div class="dropdown__items" style="display: none">
+            <ul class="menu-container"></ul>
           </div>
-
-          <div class="mb-3">
-            <label class="form-label" for="description">Description</label>
-            <textarea class="form-control" id="description" name="description" style="height: 200px"></textarea>
-          </div>
-
-          <div class="mb-3 form-check form-switch">
-            <label for="featured">featured</label>
-            <input type="checkbox" name="featured" id="featured" class="form-check-input" />
-          </div>
-          <div class="mb-3 form-check form-switch">
-            <label for="free__product">Free</label>
-            <input type="checkbox" name="free__product" id="free__product" class="form-check-input" />
-          </div>
-
-          <div class="mb-3 row g-3 align-items-center">
-            <div class="col-auto">
-              <label for="price">Price</label>
-            </div>
-            <div class="col-auto">
-              <input class="form-control" type="number" name="price" id="price" />
-            </div>
-          </div>
-
-          <div class="mb-3 row g-3 align-items-center cover__image">
-            <div class="col-auto">
-              <label class="form-label" for="cover">Cover Image </label>
-            </div>
-            <div class="col-auto">
-              <input type="text" id="cover" name="cover"  class="form-control" />
-            </div>
-
-            <div class="col-auto">
-              <label class="form-label" for="cover__altText">Cover Image AltText</label>
-            </div>
-            <div class="col-auto">
-              <input type="text" id="cover__altText" name="cover__altText"  class="form-control" />
-            </div>
-          </div>
-
-          <div class="mb-3 row g-3 align-items-center">
-            <div class="col-auto">
-              <label class="form-label" for="images">Product Image</label>
-            </div>
-            <div class="col-auto">
-
-              <input type="text" id="product__images" name="images"  class="form-control" />
-            </div>
-
-            <div class="col-auto">
-              <label class="form-label" for="product__image--altText">Product Image Alt Text</label>
-            </div>
-            <div class="col-auto">
-
-              <input type="text" id="product__image--altText" name="product__image--altText"  class="form-control" />
-            </div>
-
-
-          </div>
-          
-          <div class="mb-3 row g-3 align-items-center">
-            <label for="category">Category </label>
-            <select class="form-select" name="category" id="category">
-              <option value="">-- Please choose an category --</option>
-            </select>
-
-            <div class="mb-3 selected__categories">
-              <ul class="selected__categories--items"></ul>
-            </div>
-          </div>
-
-          <input id="id" type="hidden" />
-          <button type="submit" class="btn">Submit</button>
-          <div class="loader"></div>
-
-        </form>
+          <a href="/shoppingCart.html">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart__counter"></span>
+          </a>
+        </div>
       </div>
-    </section>
+    </nav>
 
-  </main>
-</body>
-<script src="/js/admin/adminScript.js" type="module"></script>
-<script src="/js/admin/editProduct.js" type="module"></script>
+    <main>
+      <section>
+        <div>
+          <h1>Edit - <span class="product__name"></span></h1>
+        </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <div class="container">
+          <div class="message"></div>
+          <form>
+            <div class="mb-3">
+              <label class="col-form-label" for="title">Title</label>
+              <input class="form-control" type="text" name="title" id="title" />
+            </div>
 
+            <div class="mb-3">
+              <label class="form-label" for="description">Description</label>
+              <textarea
+                class="form-control"
+                id="description"
+                name="description"
+                style="height: 200px"
+              ></textarea>
+            </div>
+
+            <div class="mb-3 form-check form-switch">
+              <label for="featured">featured</label>
+              <input
+                type="checkbox"
+                name="featured"
+                id="featured"
+                class="form-check-input"
+              />
+            </div>
+            <div class="mb-3 form-check form-switch">
+              <label for="free__product">Free</label>
+              <input
+                type="checkbox"
+                name="free__product"
+                id="free__product"
+                class="form-check-input"
+              />
+            </div>
+
+            <div class="mb-3 row g-3 align-items-center">
+              <div class="col-auto">
+                <label for="price">Price</label>
+              </div>
+              <div class="col-auto">
+                <input
+                  class="form-control"
+                  type="number"
+                  name="price"
+                  id="price"
+                />
+              </div>
+            </div>
+            <!-- ----------------------------- image start ----------------------------- -->
+            <div class="mb-3 row g-3 align-items-center cover__image">
+              <div class="col-auto">
+                <label class="form-label" for="cover">Cover Image </label>
+              </div>
+              <div class="col-auto">
+                <input
+                  type="text"
+                  id="cover"
+                  name="cover"
+                  class="form-control"
+                />
+              </div>
+
+              <div class="col-auto">
+                <label class="form-label" for="cover__altText"
+                  >Cover Image AltText</label
+                >
+              </div>
+              <div class="col-auto">
+                <input
+                  type="text"
+                  id="cover__altText"
+                  name="cover__altText"
+                  class="form-control"
+                />
+              </div>
+            </div>
+
+            <div class="mb-3 row g-3 align-items-center">
+              <div class="col-auto">
+                <label class="form-label" for="images">Product Image One</label>
+              </div>
+              <div class="col-auto">
+                <input
+                  type="text"
+                  id="product__images"
+                  name="images"
+                  class="form-control"
+                />
+              </div>
+
+              <div class="col-auto">
+                <label class="form-label" for="product__image--altText"
+                  >Product Image One Alt Text</label
+                >
+              </div>
+              <div class="col-auto">
+                <input
+                  type="text"
+                  id="product__image--altText"
+                  name="product__image--altText"
+                  class="form-control"
+                />
+              </div>
+            </div>
+
+            <div class="mb-3 row g-3 align-items-center">
+              <div class="col-auto">
+                <label class="form-label" for="productImage__two"
+                  >Product Image Two</label
+                >
+              </div>
+              <div class="col-auto">
+                <input
+                  type="text"
+                  id="productImage__two"
+                  name="productImage__two"
+                  class="form-control"
+                />
+              </div>
+              <div class="col-auto">
+                <label class="form-label" for="productImage__two--altText"
+                  >Product Image Two Alt Text</label
+                >
+              </div>
+              <div class="col-auto">
+                <input
+                  type="text"
+                  id="productImage__two--altText"
+                  name="productImage__two--altText"
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <!-- ----------------------------- image stop ------------------------------ -->
+            <div class="mb-3 row g-3 align-items-center">
+              <label for="category">Category </label>
+              <select class="form-select" name="category" id="category">
+                <option value="">-- Please choose an category --</option>
+              </select>
+
+              <div class="mb-3 selected__categories">
+                <ul class="selected__categories--items"></ul>
+              </div>
+            </div>
+
+            <input id="id" type="hidden" />
+            <button type="submit" class="btn">Submit</button>
+            <div class="loader"></div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script src="/js/admin/adminScript.js" type="module"></script>
+  <script src="/js/admin/editProduct.js" type="module"></script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"
+  ></script>
 </html>

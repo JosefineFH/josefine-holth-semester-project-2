@@ -32,11 +32,10 @@ const coverInputAltText = document.querySelector("#cover__altText");
 const productImageInput = document.querySelector("#product__images");
 const productImageAltTextInput = document.querySelector("#cover__altText");
 const selectedCategories = document.querySelector("#category");
+const productImageInputTwo = document.querySelector("#productImage__two");
+const productImageAltTextInputTwo = document.querySelector("#productImage__two--altText")
 
-// console.log(coverInput)
-// console.log(productImageInput)
 const idInput = document.querySelector("#id");
-// const loader = document.querySelector(".loader")
 
 (async function () {
   const url = baseUrl + "products/" + id + "?populate=*";
@@ -57,6 +56,8 @@ const idInput = document.querySelector("#id");
   coverInputAltText.value = editData.attributes.cover_image_alt_text;
   productImageInput.value = editData.attributes.product_image_1;
   productImageAltTextInput.value = editData.attributes.product_image_1_altText;
+  productImageInputTwo.value = editData.attributes.product_image_2
+  productImageAltTextInputTwo.value = editData.attributes.product_image_2_altText
 
   let category = editData.attributes.category.data;
 
@@ -64,7 +65,8 @@ const idInput = document.querySelector("#id");
     message.innerHTML = "add category";
   } else {
     selectedCategories.value = editData.attributes.category.data.id;
-    selectedCategories.classList.add  = "chosenCategory"
+    selectedCategories.classList.add = "chosenCategory";
+    
   }
 
   for (let i = 0; i < selectedCategories.options.length; i++) {
@@ -79,16 +81,16 @@ const idInput = document.querySelector("#id");
       }
     }
   }
-      if (featuredItem === true) {
-        featuredItemValue.checked = true
-      }
+  if (featuredItem === true) {
+    featuredItemValue.checked = true
+  }
 
-      if (freeItem === true) {
-        freeItemValue.checked = true
-      }
+  if (freeItem === true) {
+    freeItemValue.checked = true
+  }
 
   form.addEventListener("submit", submitChanges);
-  
+
 })();
 
 
@@ -108,22 +110,20 @@ function submitChanges(event) {
   const cover_image_alt_text = coverInputAltText.value.trim();
   const product_image_1 = productImageInput.value.trim();
   const product_image_1_altText = productImageAltTextInput.value.trim();
+  const product_image_2 = productImageInputTwo.value.trim()
+  const product_image_2_altText = productImageAltTextInputTwo.value.trim()
 
-  const data = JSON.stringify({ id, title, description, featured, free, price, category, cover_img_url, cover_image_alt_text, product_image_1, product_image_1_altText })
-  console.log(data)
+  const data = JSON.stringify({ id, title, description, featured, free, price, category, cover_img_url, cover_image_alt_text, product_image_1, product_image_1_altText, product_image_2, product_image_2_altText })
 
   updateProduct(data, id)
 }
 
 async function updateProduct(data, id) {
-  // loader.innerHTML = "loading";
-  // console.log(loader)
-  
   const updateUrl = baseUrl + "products/" + id + "?populate=*"
   const formData = new FormData();
-  
+
   formData.append("data", data);
-  console.log(formData)
+
   const options = {
     method: "PUT",
     body: formData,
@@ -136,9 +136,9 @@ async function updateProduct(data, id) {
   try {
     const response = await fetch(updateUrl, options);
     const json = await response.json();
-    console.log(json)
+
     window.location.replace("/admin/adminDashboard.html")
-    if(json.error){
+    if (json.error) {
       message.innerHTML = `<p>There is an error. Pleas contact us to fix the problem</p>`
     }
 

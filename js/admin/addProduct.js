@@ -26,6 +26,10 @@ const coverInputAltText = document.querySelector("#cover__altText");
 const productImageInput = document.querySelector("#product__images");
 const productImageAltTextInput = document.querySelector("#cover__altText");
 const selectedCategories = document.querySelector("#category");
+const productImageInputTwo = document.querySelector("#productImage__two");
+const productImageAltTextInputTwo = document.querySelector(
+  "#productImage__two--altText"
+);
 
 form.addEventListener("submit", getFormValue);
 
@@ -42,14 +46,16 @@ async function getFormValue(event) {
   const cover_image_alt_text = coverInputAltText.value.trim();
   const product_image_1 = productImageInput.value.trim();
   const product_image_1_altText = productImageAltTextInput.value.trim();
+  const product_image_2 = productImageInputTwo.value.trim();
+  const product_image_2_altText = productImageAltTextInputTwo.value.trim();
 
   const data = JSON.stringify({ title, description, featured, free, price, category, cover_img_url, cover_image_alt_text, product_image_1, product_image_1_altText })
-  console.log(data)
-  if (title.length < 3 || description.length < 10 || price.length < 2 || category.length === 1 || cover_img_url.length === 1 || cover_image_alt_text.length < 5 ) {
-  console.log("error")
-  displayMessage("error", "There is something missing in the form for adding products", ".message__container")
-  
-}
+
+  if (title.length < 3 || description.length < 10 || price.length < 2 || category.length === 1 || cover_img_url.length === 1 || cover_image_alt_text.length < 5) {
+
+    displayMessage("error", "There is something missing in the form for adding products", ".message__container")
+
+  }
 
 
   addProduct(data)
@@ -57,7 +63,7 @@ async function getFormValue(event) {
 }
 
 
-async function addProduct(data){
+async function addProduct(data) {
   const formData = new FormData();
   formData.append("data", data);
 
@@ -77,10 +83,9 @@ async function addProduct(data){
     const response = await fetch(updateUrl, options);
     const json = await response.json();
 
-    console.log(json)
     window.location.replace("/admin/adminDashboard.html")
-    
-    if(json.error){
+
+    if (json.error) {
       console.log("error")
     }
 
