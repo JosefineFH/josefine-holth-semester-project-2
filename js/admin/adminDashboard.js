@@ -15,9 +15,13 @@ export default function createProductList(products){
     let id = product.id
       container.innerHTML += `
       <li>
-        <h2>${title}</h2>
-        <a class="buttons" href="/admin/editProduct.html?id=${id}">Edit</a>
-        <button class="delete__button" data-id="${id}">Delete</button>
+      <div>
+      <h2>${title}</h2>
+      </div>
+      <div class="p-3">
+      <a class="btn-primary" href="/admin/editProduct.html?id=${id}">Edit</a>
+      <button class="btn-error" data-id="${id}">Delete</button>
+      </div>
       </li>
       `
     });

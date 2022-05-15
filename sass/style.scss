@@ -18,12 +18,14 @@
 @import "./components/input";
 @import "./components/footer";
 @import "./components/form";
+@import "./components/loader";
 
 // utilities (margin, padding, opacity)
 @import "./base/utilities";
 
 //page
 @import "./pages/detailsProductPage";
+@import "./pages/adminDashboard";
 
 
 @import "./components/navbar"; 

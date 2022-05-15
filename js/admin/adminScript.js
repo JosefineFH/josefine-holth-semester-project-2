@@ -3,7 +3,7 @@ import { getToken, getUserInfo } from "../utils/storage.js";
 import createProductList from "./adminDashboard.js";
 import createMenu from "../components/common/createMenu.js";
 import { baseUrl } from "../data/api.js";
-import { searchForProduct } from "../utils/serchForProduct.js";
+import { displayMessage } from "../components/errorMessages.js";
 
 createMenu();
 
@@ -13,6 +13,9 @@ const token = getToken();
 if (user.length === 0 && token.length === 0) {
   document.location.href = "/login.html";
 }
+// setTimeout(() => {
+//   getData();
+// }, "1000")
 
 getData();
 export default async function getData() {
@@ -20,10 +23,14 @@ export default async function getData() {
     const productsUrl = baseUrl + "products?populate=*";
     const response = await fetch(productsUrl);
     const products = await response.json();
+    const loader = document.querySelector(".loader")
 
     createProductList(products);
 
+    loader.style.display = "none";
+
     const search = document.querySelector("#search");
+    
     if (search) {
       search.onkeyup = () => {
         const searchValue = event.target.value.trim().toLowerCase();
@@ -35,7 +42,9 @@ export default async function getData() {
         createProductList(filterProducts);
       }
     };
+
   } catch (error) {
+    displayMessage("error", "something when wrong when loading products", ".message__container")
     console.log(error);
   }
 }

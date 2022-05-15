@@ -55,6 +55,9 @@ async function loginUser(email, password) {
       saveUserInfo(username);
 
       location.href = "/admin/adminDashboard.html"
+
+      
+
     }
     if(json.error){
         

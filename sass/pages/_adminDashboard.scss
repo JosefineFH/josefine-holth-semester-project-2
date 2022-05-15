@@ -1,20 +1,12 @@
   .product__list{
     li{
-      padding: $base-padding 0;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+
+      @media(min-width: 768px){
+        flex-direction: row;
+        align-items: center;
+      }
     }
-  }
-  form{
-    max-width: 600px;
-    margin: $base-padding auto;
-    label{
-      width: 110px;
-    }
-    .btn{
-      background-color: $secondary;
-      color: white;
-    }
-    .form-check-input:checked {
-      background-color: $secondary;
-      border-color: $secondary;
-  }
   }

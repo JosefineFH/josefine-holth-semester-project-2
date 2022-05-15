@@ -36,17 +36,22 @@
       </div>
     </section>
     <section class="container">
+      <div class="mb-2 mt-2">
+        <button class="btn-primary m-2 logout__button">Logout</button>
+        <a class="btn-primary m-1" href="/admin/addProduct.html">Add Product</a>
+      </div>
       <form>
         <label for="search" class="search">Search </label>
         <input type="text" id="search" name="search" />
       </form>
     </section>
-    <section>
-      <button class="logout__button">Logout</button>
-      <a href="/admin/addProduct.html">Add Product</a>
+
+    <section class="container">
+      <div class="loader"></div>
       <div>
         <ul class="product__list"></ul>
       </div>
+      <div class="message__container"></div>
     </section>
   </main>
 </body>
