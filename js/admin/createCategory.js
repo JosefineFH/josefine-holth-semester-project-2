@@ -1,3 +1,4 @@
+import { displayMessage } from "../components/errorMessages.js";
 import { baseUrl } from "../data/api.js";
 
 export async function createCategoryList(){
@@ -15,6 +16,6 @@ export async function createCategoryList(){
     });
 
   } catch (error) {
-    console.log(error)
+    displayMessage("error", "The category are missing", "message__container")
   }
 }

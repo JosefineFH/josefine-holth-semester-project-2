@@ -1,6 +1,7 @@
 import { baseUrl } from "../../data/api.js";
 import addToShoppingCart from "../addToShoppingCart.js";
 import createMenu from "./createMenu.js";
+import { displayMessage } from "./displayMessage.js";
 createMenu();
 
 const queryString = document.location.search;
@@ -45,5 +46,5 @@ try {
   });
 
 } catch (error) {
-  console.log(error);
+  displayMessage("error", "couldn't find the product you are looking for", "message__container")
 }

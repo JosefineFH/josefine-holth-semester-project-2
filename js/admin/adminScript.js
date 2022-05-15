@@ -43,7 +43,6 @@ export default async function getData() {
 
   } catch (error) {
     displayMessage("error", "something when wrong when loading products", ".message__container")
-    console.log(error);
   }
 }
 

@@ -108,6 +108,6 @@ async function addProduct(data) {
     }
 
   } catch (error) {
-    console.log(error)
+    displayMessage("error", "There is something wrong her. You can contact admin.", ".message__container")
   }
 }

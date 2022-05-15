@@ -27,7 +27,6 @@ export async function getHomeBanner() {
   
     } catch (error) {
       console.log(error)
-  
     }
   }
 }

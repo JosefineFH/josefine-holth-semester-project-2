@@ -1,5 +1,6 @@
 import { shoppingCartCounter } from "../../utils/shoppingCartCount.js";
 import addToShoppingCart from "../addToShoppingCart.js";
+import { displayMessage } from "./displayMessage.js";
 shoppingCartCounter();
 const productContainer = document.querySelector(".products__container")
 
@@ -8,9 +9,13 @@ export default async function createHtml(data) {
   if (products === undefined) {
     products = data
   }
-
+  if(products === null){
+    console.log(products.length)
+    displayMessage("error", "there is noe product loading right now", "message__container")
+  }
   if (productContainer) {
     productContainer.innerHTML = ""
+
     for (let i = 0; i < products.length; i++) {
       let title = products[i].attributes.title;
       let id = products[i].id
