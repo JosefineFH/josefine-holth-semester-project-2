@@ -13,9 +13,6 @@ const token = getToken();
 if (user.length === 0 && token.length === 0) {
   document.location.href = "/login.html";
 }
-// setTimeout(() => {
-//   getData();
-// }, "1000")
 
 getData();
 export default async function getData() {
@@ -34,6 +31,7 @@ export default async function getData() {
     if (search) {
       search.onkeyup = () => {
         const searchValue = event.target.value.trim().toLowerCase();
+
         const filterProducts = products.data.filter((product) => {
           if (product.attributes.title.toLowerCase().includes(searchValue)) {
             return true;

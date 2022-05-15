@@ -20,16 +20,17 @@ export default function createProductList(products){
       </div>
       <div class="p-3">
       <a class="btn-primary" href="/admin/editProduct.html?id=${id}">Edit</a>
-      <button class="btn-error" data-id="${id}">Delete</button>
+      <button class="btn-error delete__button" data-id="${id}">Delete</button>
       </div>
       </li>
       `
     });
   }
   const removeButton = document.querySelectorAll(".delete__button");
-
+  console.log(removeButton)
   
   removeButton.forEach(button => {
+    console.log(button)
     let postId = button.dataset.id;
     button.addEventListener("click", () => {
       removeProduct(postId)

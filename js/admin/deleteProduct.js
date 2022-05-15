@@ -1,5 +1,5 @@
 import { baseUrl } from "../data/api.js";
-import { getToken, getUserInfo } from "../utils/storage.js";
+import { getToken } from "../utils/storage.js";
 
 export async function removeProduct(id){
   const doDelete = confirm("Do you want to delete this product?");
