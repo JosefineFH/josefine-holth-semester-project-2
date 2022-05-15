@@ -7,7 +7,7 @@
 
 body {
   font-family: $base-font !important;
-  background-color: #FFFCF7;
+  background-color: #FFFCF7 !important;
 }
 
 ul {
@@ -61,4 +61,8 @@ a{
   padding: $base-padding;
   border: $base-border-radius;
   border-width: $base-border-thickens;
+}
+.message__container{
+  max-width: 500px;
+  margin: $base-margin*3 auto;
 }

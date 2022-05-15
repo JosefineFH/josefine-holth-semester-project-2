@@ -1,0 +1,26 @@
+form{
+  div{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: 10px 0;
+
+    justify-items: start;
+    align-items: center;
+  }
+  button.btn-primary{
+    width: 100%;
+  }
+
+  max-width: 500px;
+  margin: auto;
+  font-size: $font-size--md;
+
+  input {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-color: lightgray;
+    border-style: solid;
+  }
+}

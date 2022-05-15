@@ -1,3 +1,4 @@
+import { displayMessage } from "../components/errorMessages.js";
 import { baseUrl } from "../data/api.js";
 import { getToken, getUserInfo, saveToken, saveUserInfo } from "../utils/storage.js";
 
@@ -24,10 +25,10 @@ function login(event) {
 
   message.innerHTML = ""
   if (emailValue.length < 3) {
-    message.innerHTML += `<p>There is something wrong with your email</p>`;
+    displayMessage("error", "There is something wrong with your email", ".message__container" )
   }
   if (passwordValue.length < 4) {
-    message.innerHTML += `<p>There is something wrong with your password</p>`;
+    displayMessage("error", "There is something wrong with your password", ".message__container" )
   }
 }
 
@@ -56,11 +57,12 @@ async function loginUser(email, password) {
       location.href = "/admin/adminDashboard.html"
     }
     if(json.error){
-        message.innerHTML += `<p>your username and/or password is wrong</p>`
+        
+        displayMessage("error", "Your username and/or password is wrong", ".message__container" )
     }
     
   } catch (error) {
-    console.log(error)
-    message.innerHTML = "There is something wrong with the login. Plies comeback later and try again."
+    displayMessage("error", "There is something wrong with the login. Plies comeback later and try again.", ".message__container" )
+  
   }
 }

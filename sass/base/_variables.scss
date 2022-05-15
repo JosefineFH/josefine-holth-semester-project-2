@@ -16,6 +16,7 @@ $dark: #525558;
 $error: #d32752;
 $info: #f6c31c;
 
+
 // color palets
 $colors: (
   "primary": $primary,
@@ -50,3 +51,47 @@ $font-size--xxl: $base-font--size * 3;
 // /* breakpoints */
 $breakpoint-tablet: 768px;
 $breakpoint-laptop: 1024px;
+
+$breakpoints: (
+  "xs": 0,
+  "sm": 480px,
+  "md": 720px,
+  "lg": 960px,
+  "xl": 1200px,
+);
+
+@mixin xs {
+  @media (min-width: map-get($breakpoints, "xs")) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: map-get($breakpoints, "sm")) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: map-get($breakpoints, "md")) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: map-get($breakpoints, "lg")) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: map-get($breakpoints, "xl")) {
+    @content;
+  }
+}
+
+@mixin breakpoint($bp: 0) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
