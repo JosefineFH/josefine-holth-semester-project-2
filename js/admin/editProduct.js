@@ -1,3 +1,4 @@
+import { displayMessage } from "../components/common/displayMessage.js";
 import { baseUrl } from "../data/api.js";
 // import getData from "../data/apiCall.js";
 import { getToken, getUserInfo } from "../utils/storage.js";
@@ -113,7 +114,14 @@ function submitChanges(event) {
   const product_image_2 = productImageInputTwo.value.trim()
   const product_image_2_altText = productImageAltTextInputTwo.value.trim()
 
+
+
   const data = JSON.stringify({ id, title, description, featured, free, price, category, cover_img_url, cover_image_alt_text, product_image_1, product_image_1_altText, product_image_2, product_image_2_altText })
+
+    if (title.length < 3 || description.length < 10 || price.length < 2 || category.length < 1 || cover_img_url.length === 1 || cover_image_alt_text.length < 5) {
+    displayMessage("error", "There is something missing in the form for adding products", ".message__container")
+
+  }
 
   updateProduct(data, id)
 }
@@ -137,13 +145,12 @@ async function updateProduct(data, id) {
     const response = await fetch(updateUrl, options);
     const json = await response.json();
 
-    window.location.replace("/admin/adminDashboard.html")
     if (json.error) {
-      message.innerHTML = `<p>There is an error. Pleas contact us to fix the problem</p>`
+      displayMessage("error", json.error.message, ".message__container");
     }
-
+    window.location.href = "/admin/adminDashboard.html"
   } catch (error) {
-    message.innerHTML = `<p>There is an error. Pleas contact us to fix the problem</p>`
+    displayMessage("error", "There is an error. Pleas contact us to fix the problem", ".message__container");
   }
 
 }

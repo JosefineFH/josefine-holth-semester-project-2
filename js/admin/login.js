@@ -60,7 +60,6 @@ async function loginUser(email, password) {
 
     }
     if(json.error){
-        
         displayMessage("error", "Your username and/or password is wrong", ".message__container" )
     }
     

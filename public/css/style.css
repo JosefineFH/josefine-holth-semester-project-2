@@ -1727,13 +1727,13 @@ a:hover {
   }
 }
 
-form {
+.login__form, .search__form {
   max-width: 500px;
   margin: auto;
   font-size: 1rem;
 }
 
-form div {
+.login__form div, .search__form div {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 2fr;
@@ -1745,11 +1745,11 @@ form div {
           align-items: center;
 }
 
-form button.btn-primary {
+.login__form button.btn-primary, .search__form button.btn-primary {
   width: 100%;
 }
 
-form input {
+.login__form input, .search__form input {
   width: 100%;
   padding: 10px 20px;
   margin: 8px 0;
