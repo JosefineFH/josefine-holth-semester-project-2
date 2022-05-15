@@ -27,7 +27,7 @@ const products = data.data
         <div class="card__footer justify-space-between p-1">
           <a class="btn-secondary text-white" href="/productDetails.html?id=${products[i].id}">View Product</a>
           
-          <button class="btn-secondary text-white" data-id="${products[i].id}" data-img="${products[i].attributes.cover_img_url}" data-price="${products[i].attributes.price}" data-title="${products[i].attributes.title}">Buy</button>
+          <button class="buy__product btn-secondary text-white" data-id="${products[i].id}" data-img="${products[i].attributes.cover_img_url}" data-price="${products[i].attributes.price}" data-title="${products[i].attributes.title}">Buy</button>
         </div>
       </li>
       `;

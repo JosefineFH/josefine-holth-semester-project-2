@@ -1,13 +1,21 @@
 import { getFromStorage, saveProduct } from "../utils/storage.js";
 
 shoppingCart();
+
 export function shoppingCart() {
+  const totalShoppingSum = document.querySelector(
+    ".total__shopping--sum"
+  );
+
+
+
   let existingShoppingCart = getFromStorage("shopping__card");
   const errorMessageContainer = document.querySelector(".error__message");
   if (existingShoppingCart.length === 0) {
+    totalShoppingSum.style.display = "none"
     errorMessageContainer.innerHTML = `
     <p>You dont have any items her yeat</p>
-    <p>You can have a look <a href="/productPage.html">her</a></p>
+    <p>You can have a look <a href="/productPage.html" style="text-decoration: underline;">her</a></p>
     `;
   }
   const shoppingCartContainer = document.querySelector(".shopping__cart--list");
@@ -45,7 +53,7 @@ export function shoppingCart() {
       <button class="btn-primary plus__button" data-id="${item.id}" data-img="${item.image}" data-price="${item.price}" data-title="${item.title}">+</button>
       </div>
       
-      <p class="total__sum">Total sum: <span data-id="${item.id}"></span></p>
+      <p class="total__sum">Total sum: <span data-id="${item.id}"></span> €</p>
       </div>
       `;
 
@@ -54,9 +62,6 @@ export function shoppingCart() {
     const productCount = document.querySelectorAll(".product__count");
     const minusButton = document.querySelectorAll(".minus__button");
     const plusButton = document.querySelectorAll(".plus__button");
-    const totalShoppingSum = document.querySelector(
-      ".total__shopping--sum span"
-    );
 
     sumPrProduct = item.price;
     totalSumProducts.forEach((element) => {
@@ -70,7 +75,7 @@ export function shoppingCart() {
       let sumsPrProduct = parseInt(sumPrProduct.innerHTML);
       sum += sumsPrProduct;
     });
-    totalShoppingSum.innerHTML = `${sum} €`;
+    totalShoppingSum.innerHTML = `<p>Total sum: ${sum} €</p>`;
 
     minusButton.forEach((button) => {
       button.addEventListener("click", () => {
@@ -88,15 +93,22 @@ export function shoppingCart() {
               if (count.dataset.id === id) {
                 const countHTML = parseInt(count.innerText);
                 count.innerHTML = countHTML - 1;
-
+                
                 totalSumProducts.forEach((element) => {
                   if (element.dataset.id === count.dataset.id) {
                     element.innerText = element.innerHTML - singleProPrice;
-
+                    
                     let lastSum = (sum -= singleProPrice);
                     totalShoppingSum.innerHTML = `${lastSum} €`;
                   }
                 });
+                console.log(countHTML)
+
+                if(countHTML === 1){
+                  location.reload();
+                  
+
+                }
               }
             });
 

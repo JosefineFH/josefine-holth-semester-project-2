@@ -1,8 +1,9 @@
 const dropdownMenu = document.querySelector(".fa-bars");
 const menu = document.querySelector(".dropdown__items");
-
+console.log(dropdownMenu)
 dropdownMenu.addEventListener("click", () => {
   if (menu.style.display === "none") {
+    console.log("dropdown clicked")
     menu.style.display = "block";
   } else {
     menu.style.display = "none";

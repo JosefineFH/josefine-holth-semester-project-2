@@ -27,7 +27,7 @@ export function freeProducts(data){
           <div class="card__footer justify-space-between p-1">
             <a class="btn-secondary text-white" href="/productDetails.html?id=${product.id}">View Product</a>
             
-            <button class="btn-secondary text-white" data-id="${product.id}" data-img="${product.attributes.cover_img_url}" data-price="${product.attributes.price}" data-title="${product.attributes.title}">Buy</button>
+            <button class="buy__product btn-secondary text-white" data-id="${product.id}" data-img="${product.attributes.cover_img_url}" data-price="${product.attributes.price}" data-title="${product.attributes.title}">Buy</button>
           </div>
         </li>
         `;
@@ -38,6 +38,7 @@ export function freeProducts(data){
   const addToCartbutton = document.querySelectorAll(".buy__product")
 
   addToCartbutton.forEach(button => {
+
     button.addEventListener("click", addToShoppingCart)
 
   });

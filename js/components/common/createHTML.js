@@ -36,7 +36,7 @@ export default async function createHtml(data) {
           <div class="card__footer justify-space-between p-1">
             <a class="btn-secondary text-white" href="/productDetails.html?id=${id}">View Product</a>
             
-            <button class="btn-secondary text-white" data-id="${id}" data-img="${coverImage}" data-price="${price}" data-title="${title}">Buy</button>
+            <button class="btn-secondary text-white buy__product" data-id="${id}" data-img="${coverImage}" data-price="${price}" data-title="${title}">Buy</button>
           </div>
         </li>
         `;
