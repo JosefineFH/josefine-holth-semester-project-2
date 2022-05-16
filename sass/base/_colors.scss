@@ -10,9 +10,7 @@
 
   .bg-#{$key}{
     background-color: $val;
-    &:hover{
-      color: $val;
-    }
+
   }
 
   @if ($val != black and $val != white) {

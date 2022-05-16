@@ -706,10 +706,6 @@ a:hover {
   background-color: #D6B5AB;
 }
 
-.bg-primary:hover {
-  color: #D6B5AB;
-}
-
 .text-primary-light-1 {
   color: #dabcb3;
 }
@@ -770,10 +766,6 @@ a:hover {
   background-color: #AB7C73;
 }
 
-.bg-secondary:hover {
-  color: #AB7C73;
-}
-
 .text-secondary-light-1 {
   color: #b38981;
 }
@@ -822,6 +814,66 @@ a:hover {
   color: #785751;
 }
 
+.text-dark {
+  color: #525558;
+}
+
+.text-hover-dark:hover {
+  color: #525558;
+}
+
+.bg-dark {
+  background-color: #525558;
+}
+
+.text-dark-light-1 {
+  color: #636669;
+}
+
+.text-hover-light-dark:hover {
+  color: #636669;
+}
+
+.text-dark-light-2 {
+  color: #757779;
+}
+
+.text-hover-light-dark:hover {
+  color: #757779;
+}
+
+.text-dark-light-3 {
+  color: #86888a;
+}
+
+.text-hover-light-dark:hover {
+  color: #86888a;
+}
+
+.text-dark-dark-1 {
+  color: #4a4d4f;
+}
+
+.text-hover-dark-dark:hover {
+  color: #4a4d4f;
+}
+
+.text-dark-dark-2 {
+  color: #424446;
+}
+
+.text-hover-dark-dark:hover {
+  color: #424446;
+}
+
+.text-dark-dark-3 {
+  color: #393c3e;
+}
+
+.text-hover-dark-dark:hover {
+  color: #393c3e;
+}
+
 .text-error {
   color: #d32752;
 }
@@ -832,10 +884,6 @@ a:hover {
 
 .bg-error {
   background-color: #d32752;
-}
-
-.bg-error:hover {
-  color: #d32752;
 }
 
 .text-error-light-1 {
@@ -898,10 +946,6 @@ a:hover {
   background-color: #f6c31c;
 }
 
-.bg-info:hover {
-  color: #f6c31c;
-}
-
 .text-info-light-1 {
   color: #f7c933;
 }
@@ -962,10 +1006,6 @@ a:hover {
   background-color: white;
 }
 
-.bg-white:hover {
-  color: white;
-}
-
 .text-black {
   color: black;
 }
@@ -978,10 +1018,6 @@ a:hover {
   background-color: black;
 }
 
-.bg-black:hover {
-  color: black;
-}
-
 .text-green {
   color: #2bab8d;
 }
@@ -992,10 +1028,6 @@ a:hover {
 
 .bg-green {
   background-color: #2bab8d;
-}
-
-.bg-green:hover {
-  color: #2bab8d;
 }
 
 .text-green-light-1 {
@@ -1056,10 +1088,6 @@ a:hover {
 
 .bg-gray {
   background-color: lightgray;
-}
-
-.bg-gray:hover {
-  color: lightgray;
 }
 
 .text-gray-light-1 {
@@ -1172,7 +1200,7 @@ a:hover {
 }
 
 .card .image .product__mark {
-  background-color: #D6B5AB;
+  background-color: #AB7C73;
   width: 100px;
   margin: 20px;
   font-weight: bold;
@@ -1332,6 +1360,64 @@ a:hover {
 .btn-complement-secondary:hover {
   color: #AB7C73;
   background-color: #d3e2e4;
+}
+
+.btn-dark {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  background-color: #525558;
+  text-transform: uppercase;
+  border: #525558 solid 1px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.btn-dark:hover {
+  background-color: white;
+  color: #525558;
+}
+
+.btn-outline-dark {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  background-color: #fff;
+  text-transform: uppercase;
+  border: #fff solid 1px;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 1px solid #525558;
+}
+
+.btn-outline-dark:hover {
+  background-color: #525558;
+}
+
+.btn-complement-dark {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  background-color: #525558;
+  text-transform: uppercase;
+  border: #525558 solid 1px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #a5a29e;
+}
+
+.btn-complement-dark:hover {
+  color: #525558;
+  background-color: #a5a29e;
 }
 
 .btn-error {
@@ -2075,7 +2161,7 @@ img {
   }
 }
 
-.navbar, .navbar-primary, .navbar-secondary, .navbar-error, .navbar-info, .navbar-white, .navbar-black, .navbar-green, .navbar-gray, .navbar .container, .navbar-primary .container, .navbar-secondary .container, .navbar-error .container, .navbar-info .container, .navbar-white .container, .navbar-black .container, .navbar-green .container, .navbar-gray .container {
+.navbar, .navbar-primary, .navbar-secondary, .navbar-dark, .navbar-error, .navbar-info, .navbar-white, .navbar-black, .navbar-green, .navbar-gray, .navbar .container, .navbar-primary .container, .navbar-secondary .container, .navbar-dark .container, .navbar-error .container, .navbar-info .container, .navbar-white .container, .navbar-black .container, .navbar-green .container, .navbar-gray .container {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2090,14 +2176,14 @@ img {
           box-sizing: border-box;
 }
 
-.navbar, .navbar-primary, .navbar-secondary, .navbar-error, .navbar-info, .navbar-white, .navbar-black, .navbar-green, .navbar-gray {
+.navbar, .navbar-primary, .navbar-secondary, .navbar-dark, .navbar-error, .navbar-info, .navbar-white, .navbar-black, .navbar-green, .navbar-gray {
   background-color: #FFFCF7;
   padding: 0.75rem 1.5rem;
   -webkit-box-shadow: 2px 3px 5px rgba(212, 165, 165, 0.25);
           box-shadow: 2px 3px 5px rgba(212, 165, 165, 0.25);
 }
 
-.navbar .site-title, .navbar-primary .site-title, .navbar-secondary .site-title, .navbar-error .site-title, .navbar-info .site-title, .navbar-white .site-title, .navbar-black .site-title, .navbar-green .site-title, .navbar-gray .site-title {
+.navbar .site-title, .navbar-primary .site-title, .navbar-secondary .site-title, .navbar-dark .site-title, .navbar-error .site-title, .navbar-info .site-title, .navbar-white .site-title, .navbar-black .site-title, .navbar-green .site-title, .navbar-gray .site-title {
   font-size: 1.5rem;
 }
 
@@ -2107,6 +2193,10 @@ img {
 
 .navbar-secondary {
   background-color: #AB7C73;
+}
+
+.navbar-dark {
+  background-color: #525558;
 }
 
 .navbar-error {
@@ -2145,6 +2235,10 @@ img {
 
 .navbar-secondary {
   background-color: #AB7C73;
+}
+
+.navbar-dark {
+  background-color: #525558;
 }
 
 .navbar-error {
@@ -2270,4 +2364,45 @@ img {
 
 .menu-container {
   color: black;
+}
+
+.about__us,
+.newsletter {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.about__us a,
+.newsletter a {
+  margin: 0.75rem;
+}
+
+.about__us a:hover,
+.newsletter a:hover {
+  color: black;
+}
+
+.newsletter form {
+  margin: 0.75rem;
+  /* Add margins to the checkbox */
+}
+
+.newsletter form .container {
+  margin: 0.75rem 0;
+  padding: 0.75rem;
+}
+
+.newsletter form input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.newsletter form input[type=checkbox] {
+  margin-top: 16px;
 }

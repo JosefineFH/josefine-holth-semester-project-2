@@ -1,0 +1,38 @@
+.about__us,
+.newsletter {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+
+  a {
+    margin: $base-margin;
+
+    &:hover {
+      color: black;
+    }
+  }
+}
+
+.newsletter {
+  form {
+    margin: $base-margin;
+    .container {
+      margin: $base-margin 0;
+      padding: $base-padding;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    /* Add margins to the checkbox */
+    input[type=checkbox] {
+      margin-top: 16px;
+    }
+  }
+}
