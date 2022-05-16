@@ -77,6 +77,17 @@ a:hover {
   margin: 2.25rem auto;
 }
 
+.social__media ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 2rem;
+}
+
+.social__media ul li {
+  padding: 0 0.75rem;
+}
+
 .home__banner--image {
   display: -webkit-box;
   display: -ms-flexbox;

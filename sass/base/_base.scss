@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: $base-font !important;
+  font-family: $base-font  !important;
   background-color: #FFFCF7 !important;
 }
 
@@ -20,7 +20,7 @@ img {
   max-width: 100%;
 }
 
-h1{
+h1 {
   // color: $primary;
   margin-bottom: $base-margin;
   font-family: $title-font;
@@ -29,21 +29,24 @@ h1{
   text-align: center;
   font-weight: 100;
 }
-h2{
+
+h2 {
   font-family: $title-font;
   font-size: $font-size--lg;
   text-align: center;
   padding: $base-padding * 3 0;
 }
-a{
+
+a {
   text-decoration: none;
   color: black;
-  &:hover{
+
+  &:hover {
     color: $secondary;
   }
 }
 
-.error{
+.error {
   color: $error;
   border-color: $error;
   border-style: solid;
@@ -53,7 +56,7 @@ a{
   border-width: $base-border-thickens;
 }
 
-.notification{
+.notification {
   color: $secondary;
   border-color: $secondary;
   border-style: solid;
@@ -62,7 +65,18 @@ a{
   border: $base-border-radius;
   border-width: $base-border-thickens;
 }
-.message__container{
+
+.message__container {
   max-width: 500px;
   margin: $base-margin*3 auto;
+}
+
+.social__media ul {
+  display: flex;
+  font-size: $font-size--xl;
+
+  li {
+    padding: 0 $base-padding;
+  }
+
 }
