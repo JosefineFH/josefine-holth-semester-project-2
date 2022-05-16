@@ -32,7 +32,7 @@ h1 {
 
 h2 {
   font-family: $title-font;
-  font-size: $font-size--lg;
+  font-size: $font-size--xl;
   text-align: center;
   padding: $base-padding * 3 0;
 }
@@ -79,4 +79,16 @@ a {
     padding: 0 $base-padding;
   }
 
+}
+.about__us--section{
+  img{
+    width: 320px;
+
+    @media(min-width: 768px){
+      width: 700px;
+    }
+  }
+  p{
+    padding: $base-padding;
+  }
 }
