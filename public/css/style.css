@@ -1800,7 +1800,11 @@ a:hover {
 }
 
 .error {
-  color: red;
+  text-align: center;
+  color: #d32752;
+  border: solid 2px #d32752;
+  background-color: #d3275213;
+  font-size: 1.5rem;
 }
 
 .form-check-input:checked {

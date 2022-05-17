@@ -4,5 +4,9 @@
   font-size: 30px;
 }
 .error{
-  color: red;
+  text-align: center;
+  color: $error;
+  border: solid 2px $error;
+  background-color: #d3275213;
+  font-size: $font-size--lg;
 }

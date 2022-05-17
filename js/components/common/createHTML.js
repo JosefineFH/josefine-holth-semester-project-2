@@ -10,7 +10,6 @@ export default async function createHtml(data) {
     products = data
   }
   if(products === null){
-    console.log(products.length)
     displayMessage("error", "there is noe product loading right now", "message__container")
   }
   if (productContainer) {

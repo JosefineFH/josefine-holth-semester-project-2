@@ -100,7 +100,6 @@ async function addProduct(data) {
     const response = await fetch(updateUrl, options);
     const json = await response.json();
 
-    console.log(json)
     window.location.replace("/admin/adminDashboard.html")
 
     if (json.error) {

@@ -102,16 +102,13 @@ export function shoppingCart() {
                     totalShoppingSum.innerHTML = `${lastSum} €`;
                   }
                 });
-                console.log(countHTML)
 
                 if(countHTML === 1){
                   location.reload();
-                  
 
                 }
               }
             });
-
             break;
           }
         }

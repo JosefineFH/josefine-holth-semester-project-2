@@ -27,10 +27,9 @@ export default function createProductList(products){
     });
   }
   const removeButton = document.querySelectorAll(".delete__button");
-  console.log(removeButton)
   
   removeButton.forEach(button => {
-    console.log(button)
+
     let postId = button.dataset.id;
     button.addEventListener("click", () => {
       removeProduct(postId)
