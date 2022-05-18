@@ -6,6 +6,9 @@
 }
 
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: $base-font  !important;
   background-color: #FFFCF7 !important;
 }
@@ -80,15 +83,21 @@ a {
   }
 
 }
-.about__us--section{
-  img{
+
+.about__us--section {
+  img {
     width: 320px;
 
-    @media(min-width: 768px){
+    @media(min-width: 768px) {
       width: 700px;
     }
   }
-  p{
+
+  p {
     padding: $base-padding;
   }
+}
+
+footer{
+  margin-top: auto;
 }
