@@ -47,7 +47,7 @@ export function shoppingCart() {
       <h2 class="card-title">${item.title}</h2>
       <p class="single__price"><span>${item.price}</span> €</p>
       <a href="/productDetails.html?id=${item.id}">View Product</a> 
-      <div>
+      <div class="shopping__cart--options">
       <button class="btn-primary minus__button" data-id="${item.id}" data-price="${item.price}">-</button>
       <p class="product__count" data-id="${item.id}" >${cart}</p>
       <button class="btn-primary plus__button" data-id="${item.id}" data-img="${item.image}" data-price="${item.price}" data-title="${item.title}">+</button>

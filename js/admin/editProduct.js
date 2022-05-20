@@ -59,9 +59,8 @@ const idInput = document.querySelector("#id");
   productImageAltTextInput.value = editData.attributes.product_image_1_altText;
   productImageInputTwo.value = editData.attributes.product_image_2
   productImageAltTextInputTwo.value = editData.attributes.product_image_2_altText
-
-  let category = editData.attributes.category.data;
-
+console.log(editData.attributes.category.data.attributes.category_title)
+  
   if (category == null) {
     message.innerHTML = "add category";
   } else {
@@ -75,7 +74,7 @@ const idInput = document.querySelector("#id");
 
     if (editData.attributes.category.data == null) {
       message.innerHTML = "";
-      message.innerHTML += `<p>Category is missing</p>`;
+      message.innerHTML += `<p class="error">Category is missing</p>`;
     } else {
       if (optionsId == editData.attributes.category.data.id) {
         selectedCategories.options[i].classList.add("chosenCategory");

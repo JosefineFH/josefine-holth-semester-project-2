@@ -2202,6 +2202,31 @@ img {
   }
 }
 
+.card a {
+  text-decoration: underline;
+}
+
+.card .single__price {
+  padding: 0.75rem;
+}
+
+.card .shopping__cart--options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.75rem;
+}
+
+.card .shopping__cart--options .product__count {
+  padding: 0.75rem;
+}
+
 .navbar, .navbar-primary, .navbar-secondary, .navbar-dark, .navbar-error, .navbar-info, .navbar-white, .navbar-black, .navbar-green, .navbar-gray, .navbar .container, .navbar-primary .container, .navbar-secondary .container, .navbar-dark .container, .navbar-error .container, .navbar-info .container, .navbar-white .container, .navbar-black .container, .navbar-green .container, .navbar-gray .container {
   width: 100%;
   display: -webkit-box;
