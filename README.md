@@ -9,7 +9,6 @@ The assignment is to create a e-commerce website that has a customer section and
 - [General Info](#general-info)
 - [Technologies](#technologies)
 - [Setup](#setup)
-- [Status](#status)
 
 ## General Info
 <!-- When starting the prosject it takes sometime before the heruku API replays -->
