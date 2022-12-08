@@ -49,6 +49,3 @@ Login for the admin page:
 username: admin@admin.com
 password: Pass1234
 ```
-
-## Status
-<!-- - [x] adding a CKEditor to the text body of a post when edition or add a post. -->
