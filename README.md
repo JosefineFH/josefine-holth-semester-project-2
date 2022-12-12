@@ -1,6 +1,4 @@
-https://noroff-feu.netlify.app/content/semester-project-2/pzpzna
-
-# Semester Project 2
+# Semester Project 2 - E-commerce website
 This is a semester project for my second year of studying frontend development. 
 The assignment is to create a e-commerce website that has a customer section and a admin section. It has to be responsive and it will be populated by Strapi API that I am hosting on Heroku. 
 
@@ -39,8 +37,6 @@ This is a optional level. It is to create my own API for the site. I used strapi
 - Plain JavaScript
 - Sass
 - HTML
-
-[Backend filer](https://github.com/JosefineFH/semester-project-2-strapi)
 
 ## Setup
 ### Setup Strapi
