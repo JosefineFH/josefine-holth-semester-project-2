@@ -1,7 +1,6 @@
 https://noroff-feu.netlify.app/content/semester-project-2/pzpzna
 
 # Semester Project 2
-<!-- This is a school assignment for the javascript 2 lectures. -->
 This is a semester project for my second year of studying frontend development. 
 The assignment is to create a e-commerce website that has a customer section and a admin section. It has to be responsive and it will be populated by Strapi API that I am hosting on Heroku. 
 
@@ -36,12 +35,36 @@ This is a optional level. It is to create my own API for the site. I used strapi
 
 ## Technologies
 - Backend Strapi [api](https://semester-project-02.herokuapp.com/)
-- Heroku for backend hosting
+- Heroku for backend hosting. 
 - Plain JavaScript
 - Sass
 - HTML
 
+[Backend filer](https://github.com/JosefineFH/semester-project-2-strapi)
+
 ## Setup
+### Setup Strapi
+[Backend filer](https://github.com/JosefineFH/semester-project-2-strapi)
+
+Download from the github file. Then run the npm install
+
+Run in developer mode. Application with autoReload enabled.
+
+```
+npm run develop
+# or
+yarn develop
+```
+
+Run in start mode. Application with autoReload disabled. 
+
+```
+npm run start
+# or
+yarn start
+```
+
+
 
 Login for the admin page:
 ```
