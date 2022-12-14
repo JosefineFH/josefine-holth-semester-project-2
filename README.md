@@ -2,6 +2,8 @@
 This is a semester project for my second year of studying frontend development. 
 The assignment is to create a e-commerce website that has a customer section and a admin section. It has to be responsive and it will be populated by Strapi API that I am hosting on Heroku. 
 
+![image](https://github.com/JosefineFH/josefine-holth-semester-project-2/blob/main/assets/project_exsam_2.jpg.png?raw=true)
+
 ## Table of Content
 - [General Info](#general-info)
 - [Technologies](#technologies)
